@@ -1,5 +1,3 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>Your one-stop shop for all things osu! tournaments</h1>
 
-<a href="/auth/login"><button>Login with osu!</button></a>
-
+<p>bottom text</p>

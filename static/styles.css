@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+:root {
+    /* Light scheme */
+    --main-bg-color: #f2efea;
+    --lighter-bg-color: #ffffff;
+    --even-lighter-bg-color: #e2e5e7;
+    --main-font-color: #38383b;
+    --alt-font-color: #f5f8fa;
+    --accent-color: #22b3e7;
+
+    /* Dark scheme */
+    /* --main-bg-color: #27252c;
+    --lighter-bg-color: #312f38;
+    --even-lighter-bg-color: #4d4a58;
+    --main-font-color: #e2e5e7;
+    --alt-font-color: #e2e5e7;
+    --accent-color: #22b3e7; */
+
+    --main-font-families: Arial, Helvetica, sans-serif;
+    --secondary-font-families: Quicksand;
+}
+
+html {
+    /* Colors */
+    background-color: var(--main-bg-color);
+    color: var(--main-font-color);
+
+    /* Fonts */
+    font-family: var(--main-font-families);
+}
+
+body {
+    /* margins + padding */
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+} a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    margin: auto;
+    padding: 0rem 1rem;
+    max-width: 1140px;
+}
