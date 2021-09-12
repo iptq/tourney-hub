@@ -1,0 +1,37 @@
+:root {
+    --main-bg-color: #000000;
+    --lighter-bg-color: #14141e;
+    --even-lighter-bg-color: #3d3d4b;
+    --main-font-color: #f2efea;
+    --accent-color: #22b3e7;
+
+    --main-font-families: Arial, Helvetica, sans-serif;
+}
+
+html {
+    /* Colors */
+    background-color: var(--main-bg-color);
+    color: var(--main-font-color);
+
+    /* Fonts */
+    font-family: var(--main-font-families);
+}
+
+body {
+    /* margins + padding */
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+} a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    margin: auto;
+    padding: 0rem 1rem;
+    max-width: 1140px;
+}
