@@ -5,6 +5,7 @@
 
 <div>
     <Navbar/>
+    <br>
     <div class="container stretch">
         <slot></slot>
     </div>

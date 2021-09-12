@@ -7,26 +7,25 @@
         name: "NM",
         color: "#bbcff0",
         maps: [{
-            url: "https://osu.ppy.sh/beatmapsets/492407#osu/1049018",
-            cover: "https://assets.ppy.sh/beatmaps/492407/covers/cover.jpg",
+            beatmapset_id: 492407,
+            beatmap_id: 1049018,
             name: "Meramipop - Sanae-san [Behind you!]"
         }, {
-            url: "https://osu.ppy.sh/beatmapsets/697895#osu/1478218",
-            cover: "https://assets.ppy.sh/beatmaps/697895/covers/cover.jpg",
+            beatmapset_id: 697895,
+            beatmap_id: 1478218,
             name: "Meramipop - Secret Desire - Dyes Remix - [Irregular]"
         }]
     }, {
         name: "HD",
         color: "#f0e3a5",
         maps: [{
-            url: "https://osu.ppy.sh/beatmapsets/1415122#osu/2916573",
-            cover: "https://assets.ppy.sh/beatmaps/1415122/covers/cover.jpg",
+            beatmapset_id: 1415122,
+            beatmap_id: 2916573,
             name: "BEMANI Sound Team \"Expander\" - STOIC HYPOTHESIS [Crack]"
         }]
     }]
 </script>
 
-<br>
 <div class="main">
     <div class="banner" style="--image-url: url({imageUrl})">
         <div class="layer">
@@ -43,9 +42,9 @@
     {#each pool as category}
         {#each category.maps as map, i}
             <tr>
-                <td class="cover"><img src={map.cover} alt="cover" class="cover"></td>
+                <td class="cover"><img src="https://assets.ppy.sh/beatmaps/{map.beatmapset_id}/covers/cover.jpg" alt="cover" class="cover"></td>
                 <td class="colored-cell" style="--cell-color: {category.color}">{category.name}{i + 1}</td>
-                <td><a href={map.cover}>{map.name}</a></td>
+                <td><a href="https://osu.ppy.sh/b/{map.beatmap_id}">{map.name}</a></td>
                 <td>more info</td>
                 <td>in the future</td>
             </tr>
