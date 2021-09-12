@@ -5,24 +5,30 @@
   ];
 </script>
 
-<ul>
+<div class="wrapper">
   <div class="container">
+    <ul>
     {#each links as link}
       <li><a href={link.url}>{link.name}</a></li>
     {/each}
+    </ul>
   </div>
-</ul>
+</div>
 
 <style>
+  .wrapper {
+    height: 100%;
+
+    background-color: var(--lighter-bg-color);
+    border-top: 1px solid var(--even-lighter-bg-color);
+  }
+
   ul {
     list-style-type: none;
     margin: 0;
     padding: 1rem 0rem;
     text-align: center;
     overflow: hidden;
-
-    background-color: var(--lighter-bg-color);
-    border-top: 1px solid var(--even-lighter-bg-color);
   }
 
   li {

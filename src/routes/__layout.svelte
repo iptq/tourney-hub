@@ -3,16 +3,37 @@
   import Footer from "$lib/components/Footer.svelte";
 </script>
 
-<div>
-  <Navbar />
-  <div class="container stretch">
-    <slot />
+<div id="app">
+  <div class="content-wrap">
+    <div class="container">
+      <Navbar />
+      <slot />
+    </div>
+    <footer class="footer">
+      <Footer>/</Footer>
+    </footer>
   </div>
-  <Footer>/</Footer>
 </div>
 
-<style>
-  div.stretch {
-    min-height: 52rem;
+<style lang="scss" scoped>
+  $footer-height: 62px;
+  #app {
+    position: relative;
+    min-height: 100vh;
+
+    .content-wrap {
+      padding-bottom: $footer-height;
+
+      > .container {
+        padding-bottom: 36px;
+      }
+    }
+  }
+
+  footer.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $footer-height;
   }
 </style>
