@@ -22,6 +22,22 @@
             beatmapset_id: 1415122,
             beatmap_id: 2916573,
             name: "BEMANI Sound Team \"Expander\" - STOIC HYPOTHESIS [Crack]"
+        }, {
+            beatmapset_id: 1235834,
+            beatmap_id: 2569027,
+            name: "Kakeru - Do you love me? feat. rintaru [kurukuru]"
+        }, {
+            beatmapset_id: 1260920,
+            beatmap_id: 2621145,
+            name: "aran - Xperanza [Another]"
+        }]
+    }, {
+        name: "DN",
+        color: "#cf8ae6",
+        maps: [{
+            beatmapset_id: 1344501,
+            beatmap_id: 2985706,
+            name: "Aitsuki Nakuru & Kabocha - Lilith [Lust]"
         }]
     }]
 </script>
@@ -109,7 +125,7 @@
 
     img.cover {
         display: block;
-        height: 2rem;
+        height: 2.5rem;
         padding: 0;
         margin: 0;
     }
