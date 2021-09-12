@@ -6,7 +6,7 @@ import { Tournament } from "./Tournament";
 async function init(): Promise<Sequelize> {
   // TODO: configure the db url
   let sequelize = new Sequelize("sqlite:./test.db", {
-    models: [ User, Tournament ],
+    models: [User, Tournament],
   });
 
   // TODO: remove this when in production
@@ -16,4 +16,3 @@ async function init(): Promise<Sequelize> {
 }
 
 export let dbPromise = init();
-

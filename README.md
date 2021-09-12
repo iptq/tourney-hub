@@ -1,5 +1,4 @@
-tourney-hub
-===
+# tourney-hub
 
 First, create `.env`:
 
@@ -19,4 +18,3 @@ npm run dev
 ```
 
 - Database models live in `src/lib/models`
-

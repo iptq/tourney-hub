@@ -39,7 +39,7 @@ async function getInitialUserInfo(token: IToken): Promise<string> {
   let res = await axios.get(OSU_API_BASE + "/me", {
     headers: {
       Authorization: `Bearer ${token.access_token}`,
-    }
+    },
   });
   console.log("RES", res);
   return "";
