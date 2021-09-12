@@ -29,6 +29,7 @@
   },
   "type": "module",
   "dependencies": {
+    "axios": "^0.21.4",
     "dotenv": "^10.0.0",
     "sequelize-typescript": "^2.1.0",
     "sqlite3": "^5.0.2"
