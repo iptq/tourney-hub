@@ -2,6 +2,7 @@
     <div class="container">
         <li class="left"><a href="/" class="logo">tourney hub</a></li>
         <li class="left"><a href="/tournaments">tournaments</a></li>
+        <li class="left"><a href="/example-mappool">example mappool</a></li>
 
         <li class="right"><a href="/auth/login">login</a></li>
     </div>

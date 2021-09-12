@@ -13,6 +13,6 @@
 
 <style>
     div.stretch {
-        min-height: 50.5rem;
+        min-height: 52rem;
     }
 </style>
