@@ -8,4 +8,10 @@ export class User extends Model {
 
   @Column(DataType.INTEGER)
   public osu_id: number;
+
+  @Column(DataType.STRING)
+  public access_token: string;
+
+  @Column(DataType.STRING)
+  public refresh_token: string;
 }

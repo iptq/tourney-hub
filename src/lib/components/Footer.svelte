@@ -1,39 +1,46 @@
 <script>
-    const links = [
-        {url: "https://kit.svelte.dev", name: "svelte"},
-        {url: "https://osu.technology", name: "ਤਕਨਾਲੋਜੀ"}
-    ]
+  const links = [
+    { url: "https://kit.svelte.dev", name: "svelte" },
+    { url: "https://osu.technology", name: "ਤਕਨਾਲੋਜੀ" },
+  ];
 </script>
 
-<ul>
-    <div class="container">
-        {#each links as link}
-        <li><a href={link.url}>{link.name}</a></li>
-        {/each}
-    </div>
-</ul>
+<div class="wrapper">
+  <div class="container">
+    <ul>
+    {#each links as link}
+      <li><a href={link.url}>{link.name}</a></li>
+    {/each}
+    </ul>
+  </div>
+</div>
 
 <style>
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 1rem 0rem;
-        text-align: center;
-        overflow: hidden;
+  .wrapper {
+    height: 100%;
 
-        background-color: var(--lighter-bg-color);
-        border-top: 1px solid var(--even-lighter-bg-color);
-    }
+    background-color: var(--lighter-bg-color);
+    border-top: 1px solid var(--even-lighter-bg-color);
+  }
 
-    li {
-        display: inline-block;
-        padding: 0rem 1rem;
-    }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 1rem 0rem;
+    text-align: center;
+    overflow: hidden;
+  }
 
-    li a {
-        margin: 0 auto;
-        color: var(--main-font-color);
-    } li a:hover {
-        text-decoration: none;
-    }
+  li {
+    display: inline-block;
+    padding: 0rem 1rem;
+  }
+
+  li a {
+    margin: 0 auto;
+    color: var(--main-font-color);
+  }
+  li a:hover {
+    text-decoration: none;
+  }
 </style>

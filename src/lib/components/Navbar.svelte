@@ -1,6 +1,7 @@
 <script>
     import logo from '$lib/components/logo.svg';
 </script>
+
 <div class="nav">
     <div class="container">
         <div class="row">
@@ -84,56 +85,4 @@
         display: block;
         margin-right: 0.5rem;
     }
-
-    /* ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: var(--lighter-bg-color);
-
-        border-bottom: 1px solid var(--even-lighter-bg-color);
-        align-items: center;
-    }
-
-    li.left {
-        float: left;
-        margin-right: 2rem;
-    }
-
-    li.right {
-        float: right;
-        margin-left: 2rem;
-    }
-
-    li a {
-        display: flex;
-        align-items: center;
-        box-sizing: border-box;
-        padding: 1rem 0rem;
-        font-size: 1rem;
-        color: var(--main-font-color);
-        text-transform: uppercase;
-        text-align: center;
-    } li a:hover {
-        text-decoration: none;
-        box-shadow: inset 0px -3px 0px 0px var(--accent-color);
-    }
-
-    li a.logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-
-        display: flex;
-        align-items: center;
-    }
-
-    img.logo {
-        width: 2rem;
-        height: 2rem;
-
-        box-sizing: border-box;
-        display: block;
-        margin-right: 0.5rem;
-    } */
 </style>
