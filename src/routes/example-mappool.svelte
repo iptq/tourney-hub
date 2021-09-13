@@ -1,5 +1,23 @@
+<!-- too lazy to component-ify this route rn, I'll do it later Xd -->
 <script>
-    const imageUrl = "https://i.redd.it/y8deg1o011n71.jpg";
+    import CardTitle from "$lib/components/CardTitle.svelte";
+    import MappoolBanner from "$lib/components/mappool/MappoolBanner.svelte";
+    import TourneyNav from "$lib/components/TourneyNav.svelte";
+    import BannerCard from "$lib/components/BannerCard.svelte";
+
+    let banner = {
+        imageUrl: "https://i.redd.it/n7fud5vc85n71.jpg",
+        title: "Feiri's Test Tournament",
+        subtext: "osu!std | 1 - 1k | BWS",
+        url: "/example-tournament"
+    }
+
+    let frontUrl = "/example-tourney";
+    let mappoolsUrl = "/example-mappools";
+    let playersUrl = "/example-players";
+
+    let tournamentUrl = "/example-tourney"
+    let imageUrl = "https://i.redd.it/y8deg1o011n71.jpg";
     let rowNum = 0;
     let trClass = "";
 
@@ -44,18 +62,9 @@
     }]
 </script>
 
-<div class="card main">
-    <div class="banner" style="--image-url: url({imageUrl})">
-        <div class="layer">
-        <div class="banner-content">
-            <!-- make this link to "main tourney page"-->
-            <a href="#"><h1>{tournamentName}</h1></a>
-            <h2>{stage}</h2>
-        </div>
-        </div>
-    </div>
-</div>
-<br />
+<BannerCard imageUrl={banner.imageUrl} title={banner.title} subtext={banner.subtext} url={banner.url}/>
+<TourneyNav frontUrl={frontUrl} mappoolsUrl={mappoolsUrl} playersUrl={playersUrl} highlight="None"/>
+
 <div class="card">
     <table>
         <tr>
@@ -91,7 +100,7 @@
         height: 250px;
         width: 100%;
         background-repeat: no-repeat;
-
+        background-position: center;
         margin: 0;
     }
     

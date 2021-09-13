@@ -7,7 +7,6 @@
   <div class="content-wrap">
     <Navbar />
     <div class="container">
-      <br>
       <slot />
     </div>
     <footer class="footer">

@@ -14,6 +14,7 @@
             <ul>
                 <li><a href="/tournaments">tournaments</a></li>
                 <li><a href="/example-mappool">example mappool</a></li>
+                <li><a href="/example-tourney">example tourney</a></li>
                 <li><a href="/auth/login">login</a></li>
             </ul>
         </div>        
@@ -24,6 +25,7 @@
     div.nav {
         background-color: var(--lighter-bg-color);
         border-bottom: 1px solid var(--even-lighter-bg-color);
+        margin-bottom: 1rem;
 
         list-style: none;
     }
