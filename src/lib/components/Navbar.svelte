@@ -1,5 +1,16 @@
 <script>
     import logo from '$lib/components/logo.svg';
+
+    let links = [{
+        url: "/tournaments",
+        name: "tournaments"
+    }, {
+        url: "/example-tourney",
+        name: "example tourney"
+    }, {
+        url: "/auth/login",
+        name: "login"
+    }]
 </script>
 
 <div class="nav">
@@ -12,10 +23,9 @@
                 </h3>
             </a>
             <ul>
-                <li><a href="/tournaments">tournaments</a></li>
-                <li><a href="/example-mappool">example mappool</a></li>
-                <li><a href="/example-tourney">example tourney</a></li>
-                <li><a href="/auth/login">login</a></li>
+                {#each links as link}
+                <li><a href={link.url}>{link.name}</a></li>
+                {/each}
             </ul>
         </div>        
     </div>
