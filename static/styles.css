@@ -1,23 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto:wght@400;700&display=swap');
 :root {
   /* Light scheme */
-  --main-bg-color: #f2efea;
+  /* --main-bg-color: #e8eef1;
   --lighter-bg-color: #ffffff;
+  --slightly-lighter-bg-color: #f4f7f8;
   --even-lighter-bg-color: #e2e5e7;
   --main-font-color: #38383b;
   --alt-font-color: #f5f8fa;
-  --accent-color: #22b3e7;
+  --accent-color: #22b3e7; */
 
   /* Dark scheme */
-  /* --main-bg-color: #27252c;
-    --lighter-bg-color: #312f38;
-    --even-lighter-bg-color: #4d4a58;
-    --main-font-color: #e2e5e7;
-    --alt-font-color: #e2e5e7;
-    --accent-color: #22b3e7; */
+  --main-bg-color: #171a1b;
+  --lighter-bg-color: #33393b;
+  --slightly-lighter-bg-color: #232729;
+  --even-lighter-bg-color: #454d50;
+  --main-font-color: #dedeeb;
+  --alt-font-color: #dedeeb;
+  --accent-color: #e72274;
 
-    --main-font-families: Roboto, Arial, Helvetica, sans-serif;
-    --secondary-font-families: Quicksand;
+  --main-font-families: Roboto, Arial, Helvetica, sans-serif;
+  --secondary-font-families: Quicksand;
 }
 
 html {
@@ -55,7 +57,7 @@ p {
 }
 
 .card {
-    background-color: var(--lighter-bg-color);
-    box-shadow: 0 1px 2px rgba(0,0,0,.24),0 1px 3px rgba(0,0,0,.12);
-    padding: 1rem;
+  background-color: var(--lighter-bg-color);
+  box-shadow: 0 1px 2px rgba(0,0,0,.24),0 1px 3px rgba(0,0,0,.12);
+  padding: 1rem;
 }

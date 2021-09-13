@@ -5,8 +5,8 @@
 
 <div id="app">
   <div class="content-wrap">
+    <Navbar />
     <div class="container">
-      <Navbar />
       <br>
       <slot />
     </div>
