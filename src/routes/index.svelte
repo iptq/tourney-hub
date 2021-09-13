@@ -20,10 +20,12 @@
         <li>mappool caching</li>
     </ul>
     <hr>
-    <p>Extended goals:</p>
+    <p>Feature ideas:</p>
     <ul>
+        <li>rescheduling requests</li>
         <li>BWS rank calculation</li>
         <li>auto-ref bots</li>
         <li>team creation?</li>
+        <li>discord bot for scheduling and stuff</li>
     </ul>
 </div>

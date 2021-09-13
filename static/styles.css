@@ -10,13 +10,13 @@
   --accent-color: #22b3e7; */
 
   /* Dark scheme */
-  --main-bg-color: #171a1b;
-  --lighter-bg-color: #33393b;
-  --slightly-lighter-bg-color: #232729;
-  --even-lighter-bg-color: #454d50;
+  --main-bg-color: #17181b;
+  --lighter-bg-color: #33343b;
+  --slightly-lighter-bg-color: #232429;
+  --even-lighter-bg-color: #454850;
   --main-font-color: #dedeeb;
   --alt-font-color: #dedeeb;
-  --accent-color: #e72274;
+  --accent-color: #f5b642;
 
   --main-font-families: Roboto, Arial, Helvetica, sans-serif;
   --secondary-font-families: Quicksand;
