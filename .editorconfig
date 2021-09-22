@@ -3,5 +3,5 @@ root = true
 [*]
 indent_style = space
 
-[*.{md,svelte,ts,json,json5}]
+[*.{md,svelte,ts,json,json5,js}]
 indent_size = 2

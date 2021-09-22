@@ -1,31 +1,35 @@
 <script>
-    import CardTitle from "$lib/components/CardTitle.svelte";
+  import CardTitle from "$lib/components/CardTitle.svelte";
 </script>
 
 <div class="container card">
-    <CardTitle title="Home"/>
-    <p>Tourney Hub is an online platform for centralized osu! tournament hosting. Currently, the website is only planned to be developed for osu! gameplay tournaments, but may potentially, not necessarily, possibly be expanded to mapping tournaments in the future.</p>
+  <CardTitle title="Home" />
+  <p>
+    Tourney Hub is an online platform for centralized osu! tournament hosting. Currently, the
+    website is only planned to be developed for osu! gameplay tournaments, but may potentially, not
+    necessarily, possibly be expanded to mapping tournaments in the future.
+  </p>
 </div>
 
 <div class="container card">
-    <CardTitle title="Goals"/>    
-    <p>Main goals:</p>
-    <ul>
-        <li>finish tournament creation functionality</li>
-        <li>Challonge-like feature</li>
-        <li>tournament staff team with appropriate tournament-configuration permissions</li>
-        <li>rank-restriction</li>
-        <li>show all tournaments on tournaments page</li>
-        <li>create filters for tournament searching</li>
-        <li>mappool caching</li>
-    </ul>
-    <hr>
-    <p>Feature ideas:</p>
-    <ul>
-        <li>rescheduling requests</li>
-        <li>BWS rank calculation</li>
-        <li>auto-ref bots</li>
-        <li>team creation?</li>
-        <li>discord bot for scheduling and stuff</li>
-    </ul>
+  <CardTitle title="Goals" />
+  <p>Main goals:</p>
+  <ul>
+    <li>finish tournament creation functionality</li>
+    <li>Challonge-like feature</li>
+    <li>tournament staff team with appropriate tournament-configuration permissions</li>
+    <li>rank-restriction</li>
+    <li>show all tournaments on tournaments page</li>
+    <li>create filters for tournament searching</li>
+    <li>mappool caching</li>
+  </ul>
+  <hr />
+  <p>Feature ideas:</p>
+  <ul>
+    <li>rescheduling requests</li>
+    <li>BWS rank calculation</li>
+    <li>auto-ref bots</li>
+    <li>team creation?</li>
+    <li>discord bot for scheduling and stuff</li>
+  </ul>
 </div>

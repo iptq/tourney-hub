@@ -10,6 +10,15 @@ export class User extends Model {
   public osu_id: number;
 
   @Column(DataType.STRING)
+  public username: string;
+
+  @Column(DataType.INTEGER)
+  public rank: number;
+
+  @Column(DataType.FLOAT)
+  public pp: number;
+
+  @Column(DataType.STRING)
   public access_token: string;
 
   @Column(DataType.STRING)

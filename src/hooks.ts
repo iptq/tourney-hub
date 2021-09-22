@@ -1,8 +1,14 @@
+import { handleSession } from "svelte-kit-cookie-session";
+import { Request } from "@sveltejs/kit";
+
+import { secretKey } from "$lib/config";
 import { dbPromise } from "$lib/models";
+
+export const handle = handleSession({ secret: secretKey }, handle2);
 
 // This function gets run on every single request.
 // We'll use it to make sure the database gets set up.
-export async function handle({ request: req, resolve }) {
+async function handle2({ request: req, resolve }) {
   // This will block until the db is ready. Note that this should only block on
   // the first request, and the database initialization step isn't triggered by
   // the request, it's triggered by the module being imported at all.
@@ -15,4 +21,13 @@ export async function handle({ request: req, resolve }) {
   // other stuff that happens after request is handled
 
   return res;
+}
+
+export async function getSession(request: Request) {
+  let isLoggedIn = false;
+  let session = request.locals.session;
+
+  console.log("session:", session);
+
+  return { isLoggedIn };
 }

@@ -8,9 +8,9 @@
 <div class="wrapper">
   <div class="container">
     <ul>
-    {#each links as link}
-      <li><a href={link.url}>{link.name}</a></li>
-    {/each}
+      {#each links as link}
+        <li><a href={link.url}>{link.name}</a></li>
+      {/each}
     </ul>
   </div>
 </div>
