@@ -28,7 +28,7 @@
         padding: 0rem 1rem;
 
         max-width: 30rem;
-        overflow-x: scroll;
+        /* overflow-x: scroll; */
     }
     td.cover {
         margin: 0;
