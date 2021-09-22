@@ -65,7 +65,9 @@
       {#each team as member}
         <div class="team-member">
           <img class="avatar" src="https://a.ppy.sh/{member.userId}" alt="" />
-          <a href="https://osu.ppy.sh/users/{member.userId}" class="member-name">{member.name}</a>
+          <a href="https://osu.ppy.sh/users/{member.userId}" class="member-name"
+            >{member.name}</a
+          >
           <p class="member-role">{member.role}</p>
         </div>
       {/each}
@@ -75,11 +77,13 @@
     <div class="container card" id="description">
       <CardTitle title={"Description"} />
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
       </p>
       <br />
       <p>yeah yeah ok 1v1 or some shit</p>

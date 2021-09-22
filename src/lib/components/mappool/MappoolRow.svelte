@@ -15,7 +15,9 @@
       class="cover"
     /></td
   >
-  <td class="colored-cell" style="--cell-color: {categoryColor}">{categoryName}{modNum}</td>
+  <td class="colored-cell" style="--cell-color: {categoryColor}"
+    >{categoryName}{modNum}</td
+  >
   <td><a href="https://osu.ppy.sh/b/{beatmapId}">{mapName}</a></td>
   <td>more info</td>
   <td>in the future</td>
