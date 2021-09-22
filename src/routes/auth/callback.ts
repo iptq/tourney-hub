@@ -1,9 +1,8 @@
-import axios from "axios";
-import { Request } from "@sveltejs/kit";
-
-import { OSU_API_BASE, OSU_TOKEN_ENDPOINT } from "$lib/consts";
 import { osuClientId, osuClientSecret, publicUrl } from "$lib/config";
+import { OSU_API_BASE, OSU_TOKEN_ENDPOINT } from "$lib/consts";
 import { User } from "$lib/models/User";
+import { Request } from "@sveltejs/kit";
+import axios from "axios";
 
 interface IToken {
   token_type: "Bearer";

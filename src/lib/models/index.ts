@@ -1,7 +1,6 @@
 import { Sequelize } from "sequelize-typescript";
-
-import { User } from "./User";
 import { Tournament } from "./Tournament";
+import { User } from "./User";
 
 async function init(): Promise<Sequelize> {
   // TODO: configure the db url

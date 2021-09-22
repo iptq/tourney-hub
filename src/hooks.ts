@@ -1,8 +1,7 @@
-import { handleSession } from "svelte-kit-cookie-session";
-import { Request } from "@sveltejs/kit";
-
 import { secretKey } from "$lib/config";
 import { dbPromise } from "$lib/models";
+import { Request } from "@sveltejs/kit";
+import { handleSession } from "svelte-kit-cookie-session";
 
 export const handle = handleSession({ secret: secretKey }, handle2);
 

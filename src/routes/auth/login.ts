@@ -1,5 +1,5 @@
-import { OSU_AUTHORIZE_ENDPOINT } from "$lib/consts";
 import { osuClientId, publicUrl } from "$lib/config";
+import { OSU_AUTHORIZE_ENDPOINT } from "$lib/consts";
 
 export async function get(_) {
   let callbackUrl = `${publicUrl}/auth/callback`;
