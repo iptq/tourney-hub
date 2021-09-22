@@ -5,3 +5,6 @@ node_modules
 /package
 /test.db
 /.env
+
+/src/**/*.js
+/src/**/*.js.map

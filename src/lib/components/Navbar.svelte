@@ -11,10 +11,6 @@
       url: "/example-tourney",
       name: "example tourney",
     },
-    {
-      url: "/auth/login",
-      name: "login",
-    },
   ];
 </script>
 
@@ -31,9 +27,11 @@
         {#each links as link}
           <li><a href={link.url}>{link.name}</a></li>
         {/each}
-        <li>
-          {JSON.stringify(session)}
-        </li>
+        {#if $session.isLoggedIn}
+          <li><a href="/user">{$session.user.username}</a></li>
+        {:else}
+          <li><a href="/auth/login">Login</a></li>
+        {/if}
       </ul>
     </div>
   </div>

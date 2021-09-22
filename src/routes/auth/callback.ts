@@ -1,7 +1,7 @@
 import { osuClientId, osuClientSecret, publicUrl } from "$lib/config";
 import { OSU_API_BASE, OSU_TOKEN_ENDPOINT } from "$lib/consts";
 import { User } from "$lib/models/User";
-import { Request } from "@sveltejs/kit";
+import type { Request } from "@sveltejs/kit";
 import axios from "axios";
 
 interface IToken {
@@ -11,16 +11,16 @@ interface IToken {
   refresh_token: string;
 }
 
-export async function get(req: Request) {
+export async function get({ locals, query }: Request) {
   // make a request to the osu server for the user's access tokens
-  let code = req.query.get("code");
+  let code = query.get("code");
   let token = await getAccessToken(code);
   console.log("res", token);
 
   let user = await getInitialUserInfo(token);
 
-  console.log("session from callback.ts", req.locals.session);
-  req.locals.session.user = user;
+  locals.session.data = { user };
+  console.log("session from callback.ts", locals.session);
 
   return {
     // redirect
