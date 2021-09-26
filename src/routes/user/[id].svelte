@@ -18,7 +18,6 @@
   import { flag } from "$lib/utils/flag";
 
   export let user;
-  console.log("USER", user);
 
   let player = {
     name: "Feiri",

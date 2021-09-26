@@ -1,5 +1,6 @@
 import { secretKey } from "$lib/config";
 import { dbPromise } from "$lib/models";
+import { osuapi } from "$lib/osuapi";
 import type { Handle, Request } from "@sveltejs/kit";
 import { handleSession } from "svelte-kit-cookie-session";
 
@@ -10,6 +11,7 @@ let handle2: Handle = async ({ request, resolve }) => {
   // the first request, and the database initialization step isn't triggered by
   // the request, it's triggered by the module being imported at all.
   request.locals.db = await dbPromise;
+  request.locals.osuapi = await osuapi;
 
   // other stuff that happens before request is handled
 

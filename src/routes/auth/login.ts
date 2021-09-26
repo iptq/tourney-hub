@@ -13,7 +13,6 @@ export async function get(_: Request) {
   return {
     // redirect
     status: 302,
-
     headers: {
       location: redirectUrl,
     },

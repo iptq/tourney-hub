@@ -56,7 +56,6 @@ async function getInitialUserInfo(token: IToken): Promise<InitialUserInfo> {
       Authorization: `Bearer ${token.access_token}`,
     },
   });
-  console.log("RES", res);
 
   let apiUser = res.data;
 
