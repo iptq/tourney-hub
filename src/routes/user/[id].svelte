@@ -14,7 +14,7 @@
 
 <script>
   import CardTitle from "$lib/components/CardTitle.svelte";
-  import ProfileNav from "$lib/components/ProfileNav.svelte";
+  import CardNav from "$lib/components/CardNav.svelte";
   import { flag } from "$lib/utils/flag";
 
   export let user;
@@ -29,11 +29,29 @@
     tourneyCount: 7,
     picksPlayed: 59,
     picksWon: 27,
-    about: "I play the tech maps and that's about it."
+    about: "Strengths: tech, alt, gimmick, anything weird that isn't too fast ..... Weaknesses: (death)streams"
   };
+
+  let cardNavLinks = [{
+    name: "match history",
+    url: "#"
+  }, {
+    name: "staffing history",
+    url: "#"
+  }];
+  let cardNavHighlight = "match history";
+
+  let matches = [{
+    teamRed: {
+      players: [3214844]
+    },
+    teamBlue: {
+
+    }
+  }]
 </script>
 
-<div class="card">
+<div class="card profile-banner">
   <div class="card-content profile-head">
     <div>
       <img
@@ -49,9 +67,6 @@
         </div>
       </div>
     </div>
-    <div>
-      {player.about}
-    </div>
   </div>
 </div>
 <br>
@@ -61,13 +76,6 @@
 
 <div class="columns">
   <div class="card row-card">
-    <div class="player-card-avatar row-card-top card-content">
-      <img
-        src="https://a.ppy.sh/{user.osu_id}"
-        alt="pfp for user {user.osu_id}"
-      />
-      <h2>{flag(user.country_code)}&nbsp;&nbsp;{user.username}</h2>
-    </div>
     <div class="player-card-stat card-content">
       <span>ELO</span>
       {player.elo}
@@ -94,25 +102,23 @@
     </div>
   </div>
   <div class="profile-info">
-    <div class="card">
-      <CardTitle title="about" />
-      <div class="card-content">
-        {player.about}
-      </div>
-    </div>
-
     {#if user.about}
       <div class="card">
         <CardTitle title="about" />
         {user.about}
       </div>
     {/if}
-    <div>
-      <ProfileNav playerUrl="#" staffUrl="#" highlight="" />
-    </div>
     <div class="card">
       <div class="card-content">
-        oiawhge iughewgh ewighei auieagie gieagielgerilgbuerbgaer igealg beag
+        {player.about}
+      </div>
+    </div>
+    <div class="card">
+      <CardNav links={cardNavLinks} highlight={cardNavHighlight} />
+      <div class="card-content">
+        <div>
+          oiawhge iughewgh ewighei auieagie gieagielgerilgbuerbgaer igealg beag
+        </div>
       </div>
     </div>
   </div>
@@ -174,4 +180,14 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
+  /* .profile-banner {
+    background-image: url("https://assets.ppy.sh/user-profile-covers/3214844/a5c9f4bfe6b876f99094b5d4c41d5c4057ac648ae866fdcc2b60bf47d6f590df.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  div.card.profile-banner > div.card-content {
+    background-color: #fff;
+  } */
 </style>
