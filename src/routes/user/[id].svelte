@@ -1,28 +1,25 @@
 <script context="module">
+  export async function load({ page, session, fetch }) {
+    let id = page.params.id;
+    let params = new URLSearchParams({ id });
+    let result = await fetch("/api/user/info?" + params);
+    let user = await result.json();
+    if (user === null) return { status: 404 };
+
+    return {
+      props: { user },
+    };
+  }
+</script>
+
+<script>
   import { page } from "$app/stores";
   import CardTitle from "$lib/components/CardTitle.svelte";
   import ProfileNav from "$lib/components/ProfileNav.svelte";
+  import { flag } from "$lib/utils/flag";
 
-  // stolen from https://github.com/thekelvinliu/country-code-emoji/blob/main/src/index.js
-  function flag(cc) {
-    const CC_REGEX = /^[a-z]{2}$/i;
-    const FLAG_LENGTH = 4;
-    const OFFSET = 127397;
-
-    if (!CC_REGEX.test(cc)) {
-      const type = typeof cc;
-      throw new TypeError(
-        `cc argument must be an ISO 3166-1 alpha-2 string, but got '${
-          type === "string" ? cc : type
-        }' instead.`
-      );
-    }
-
-    const codePoints = [...cc.toUpperCase()].map(
-      (c) => c.codePointAt() + OFFSET
-    );
-    return String.fromCodePoint(...codePoints);
-  }
+  export let user;
+  console.log("USER", user);
 
   let player = {
     name: "Feiri",
@@ -41,10 +38,10 @@
   <div class="player-card">
     <div class="player-card-avatar">
       <img
-        src="https://a.ppy.sh/{$page.params.slug}"
-        alt="pfp for user {$page.params.slug}"
+        src="https://a.ppy.sh/{user.osu_id}"
+        alt="pfp for user {user.osu_id}"
       />
-      <h2>{player.country}&nbsp;&nbsp;{player.name}</h2>
+      <h2>{player.country}&nbsp;&nbsp;{user.username}</h2>
     </div>
     <div class="player-card-stat">
       <span>ELO</span>
@@ -52,7 +49,7 @@
     </div>
     <div class="player-card-stat">
       <span>Bancho Rank</span>
-      {player.rank}
+      {user.rank}
     </div>
     <div class="player-card-stat">
       <span>Tournament Wins</span>
