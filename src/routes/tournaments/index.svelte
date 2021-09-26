@@ -1,10 +1,15 @@
-<script>
-  import { onMount } from "svelte";
+<script context="module">
+  export async function load({ page, session, fetch }) {
+    let id = page.params.id;
+    let params = new URLSearchParams({ id });
+    let result = await fetch("/api/tournaments");
+    let tournaments = await result.json();
+    if (tournaments === null) return { status: 404 };
 
-  onMount(async () => {
-    let res = await fetch("/api/tournaments");
-    console.log("TOURNAMENTS LIST", res);
-  });
+    return {
+      props: { tournaments },
+    };
+  }
 </script>
 
 <a href="/tournaments/create">Create New Tournament</a>

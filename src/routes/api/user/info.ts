@@ -7,6 +7,10 @@ export async function get(request: Request) {
     where: { osu_id: id },
   });
 
+  if (user === null) {
+    // TODO: fetch the user from osu! API
+  }
+
   return {
     status: 200,
     body: user,

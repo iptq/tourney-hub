@@ -15,6 +15,12 @@ export class User extends Model {
   @Column(DataType.STRING)
   public username: string;
 
+  @Column(DataType.STRING)
+  public about: string;
+
+  @Column(DataType.FLOAT)
+  public skill: number;
+
   @Column(DataType.INTEGER)
   public rank: number;
 
