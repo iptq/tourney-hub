@@ -6,7 +6,10 @@ export async function get(request: Request) {
   let tournament = await Tournament.findOne({
     where: { id },
     include: [
-      User,
+      {
+        model: User,
+        attributes: ["osu_id", "username"],
+      },
       {
         model: TournamentStage,
         include: [Mappool],
