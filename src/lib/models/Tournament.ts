@@ -79,4 +79,7 @@ export class Tournament extends Model {
 
   @Column(DataType.TEXT)
   public homepage: string;
+
+  @Column(DataType.STRING)
+  public banner_image: string;
 }

@@ -12,22 +12,28 @@
   }
 </script>
 
-<script>
+<script lang="ts">
   import CardTitle from "$lib/components/CardTitle.svelte";
   import TourneyNav from "$lib/components/TourneyNav.svelte";
   import BannerCard from "$lib/components/BannerCard.svelte";
+  import type { Tournament } from "$lib/models/Tournament";
 
-  export let tournament;
+  export let tournament: Tournament;
 
   let frontUrl = "/tournaments/" + tournament.id;
 </script>
-
-<h1>{tournament.name}</h1>
 
 <details>
   <summary>Tournament JSON</summary>
   <pre>{JSON.stringify(tournament, null, 2)}</pre>
 </details>
+
+<BannerCard
+  imageUrl={tournament.banner_image}
+  title={tournament.name}
+  subtext="Sample Subtext"
+  url={frontUrl}
+/>
 
 <TourneyNav
   {frontUrl}
@@ -52,11 +58,10 @@
           src="https://a.ppy.sh/{tournament.admin.osu_id}"
           alt=""
         />
-        <a
-          href="https://osu.ppy.sh/users/{tournament.admin.osu_id}"
-          class="member-name">{tournament.admin.username}</a
+        <a href={"/user/" + tournament.admin.osu_id} class="member-name"
+          >{tournament.admin.username}</a
         >
-        <p class="member-role">{tournament.admin.role}</p>
+        <p class="member-role">Role</p>
       </div>
     </div>
   </div>
