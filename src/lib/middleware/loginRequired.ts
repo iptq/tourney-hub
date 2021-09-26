@@ -1,5 +1,4 @@
 import type { Request } from "@sveltejs/kit";
-import type { Session } from "svelte-kit-cookie-session";
 import type { MiddlewareResponse } from ".";
 
 export default async function loginRequired(
@@ -22,6 +21,14 @@ export default async function loginRequired(
   };
 }
 
-export async function checkLogin(session: Session): Promise<boolean> {
-  return typeof session.data?.user !== "string";
+export async function checkLogin(session: any): Promise<boolean> {
+  if (!session.isLoggedIn || session.isLoggedIn === false) {
+    return false;
+  }
+
+  if (!session.user) {
+    return false;
+  }
+
+  return true;
 }

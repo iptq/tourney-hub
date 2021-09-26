@@ -2,7 +2,7 @@
   // Check if the user is logged in correctly.
   import { checkLogin } from "$lib/middleware/loginRequired";
   export async function load({ session }) {
-    if (!checkLogin(session)) {
+    if (!(await checkLogin(session))) {
       return { redirect: "/", status: 302 };
     }
     return { props: {} };
