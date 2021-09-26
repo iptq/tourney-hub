@@ -1,28 +1,21 @@
 <script>
-  export let frontUrl;
-  export let mappoolsUrl;
-  export let playersUrl;
+  export let playerUrl;
+  export let staffUrl;
 
   export let highlight;
 </script>
 
 <div class="container">
-  {#if highlight == "Front"}
-    <a class="highlight" href={frontUrl}>Front</a>
+  {#if highlight == "Player"}
+    <a class="highlight" href={playerUrl}>Player</a>
   {:else}
-    <a href={frontUrl}>Front</a>
+    <a href={playerUrl}>Player</a>
   {/if}
 
-  {#if highlight == "Mappools"}
-    <a class="highlight" href={mappoolsUrl}>Mappools</a>
+  {#if highlight == "Staff"}
+    <a class="highlight" href={staffUrl}>Staff</a>
   {:else}
-    <a href={mappoolsUrl}>Mappools</a>
-  {/if}
-
-  {#if highlight == "Players"}
-    <a class="highlight" href={playersUrl}>Players</a>
-  {:else}
-    <a href={playersUrl}>Players</a>
+    <a href={staffUrl}>Staff</a>
   {/if}
 </div>
 
@@ -36,7 +29,6 @@
     padding: 1rem;
 
     border-radius: 4px;
-    margin-top: 1rem;
   }
   @media screen and (max-width: 600px) {
     div {

@@ -19,4 +19,4 @@
 <h1>{tournament.name}</h1>
 
 <pre>{JSON.stringify(tournament, null, 2)}</pre>
-Run by <a href="/users/{tournament.admin_id}">{tournament.admin.username}</a>
+Run by <a href="/user/{tournament.admin_id}">{tournament.admin.username}</a>
