@@ -17,11 +17,16 @@ export async function get(request: Request) {
   }
   console.log("PREDICATE", predicate);
 
+  // query for the tournaments
   let tournaments = await Tournament.findAll({
     where: predicate,
     attributes: ["id", "name", "admin_id"],
-    limit: 20,
-    include: [User],
+    include: [
+      {
+        model: User,
+        attributes: ["username"],
+      },
+    ],
   });
 
   return { body: tournaments };
