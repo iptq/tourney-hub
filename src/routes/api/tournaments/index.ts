@@ -29,7 +29,7 @@ export async function post(request: Request) {
 
   let dbTournament = await Tournament.create({
     name: body.name,
-    admin_id: session.user.id,
+    admin_id: session.user.osu_id,
   });
 
   return {

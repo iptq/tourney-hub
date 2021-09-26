@@ -3,6 +3,7 @@ import {
   AllowNull,
   Column,
   DataType,
+  BelongsTo,
   ForeignKey,
   Index,
   Model,
@@ -42,8 +43,12 @@ export class Tournament extends Model {
   @Column(DataType.INTEGER)
   public admin_id: number;
 
+  @BelongsTo(() => User)
+  public admin: User;
+
   @Index
-  @Column(DataType.ENUM(...formatItems))
+  // @Column(DataType.ENUM({ values: formatItems }))
+  @Column(DataType.STRING)
   public format: Format;
 
   @Index

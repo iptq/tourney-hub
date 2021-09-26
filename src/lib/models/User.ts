@@ -10,9 +10,6 @@ import {
 export class User extends Model {
   @PrimaryKey
   @Column(DataType.INTEGER)
-  public id: number;
-
-  @Column(DataType.INTEGER)
   public osu_id: number;
 
   @Column(DataType.STRING)
