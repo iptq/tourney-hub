@@ -10,6 +10,23 @@
   }
 </script>
 
+<script>
+  export let tournaments;
+</script>
+
 <a href="/tournaments/create">Create New Tournament</a>
 
-<p>tournaments go here</p>
+<table>
+  <thead>
+    <tr>
+      <th>Tournament Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {#each tournaments as tournament}
+      <tr>
+        <td><a href={"tournaments/" + tournament.id}>{tournament.name}</a></td>
+      </tr>
+    {/each}
+  </tbody>
+</table>

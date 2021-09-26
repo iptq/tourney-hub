@@ -10,7 +10,7 @@
       <slot />
     </div>
     <footer class="footer">
-      <Footer>/</Footer>
+      <Footer />
     </footer>
   </div>
 </div>

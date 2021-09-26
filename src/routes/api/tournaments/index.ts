@@ -6,7 +6,7 @@ import { Length } from "class-validator";
 // Get a listing of all tournaments
 export async function get(_: Request) {
   let tournaments = await Tournament.findAll({
-    attributes: ["name"],
+    attributes: ["id", "name"],
     limit: 20,
   });
 
