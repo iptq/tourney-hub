@@ -27,7 +27,7 @@
       role: "pooler",
     },
     {
-      name: "IOEception",
+      name: "IOException",
       userId: 2688103,
       role: "tester",
     },
