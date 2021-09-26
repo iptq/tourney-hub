@@ -1,5 +1,7 @@
 # tourney-hub
 
+![lines of code](https://tokei.rs/b1/github/iptq/tourney-hub)
+
 First, create `.env`:
 
 ```
