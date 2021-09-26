@@ -4,6 +4,7 @@ First, create `.env`:
 
 ```
 THUB_PUBLIC_URL=http://localhost:3000
+THUB_SECRET_KEY=whatever-you-want
 
 # Get these from the osu! website
 THUB_OSU_CLIENT_ID=1234

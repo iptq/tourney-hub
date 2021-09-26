@@ -9,17 +9,28 @@
   }
 </script>
 
+<svelte:head>
+  <title>Create new tournament</title>
+</svelte:head>
+
 <script lang="ts">
+  import { goto } from "$app/navigation";
+
   let spinning: boolean = false;
   let name: string;
 
   let submit = async () => {
     spinning = true;
 
-    await fetch("/api/tournaments", {
+    let result = await fetch("/api/tournaments", {
       method: "POST",
       body: JSON.stringify({ name }),
     });
+
+    let body = await result.json();
+    if (result.status == 200) {
+      goto(`/tournaments/${body.id}`);
+    }
   };
 </script>
 

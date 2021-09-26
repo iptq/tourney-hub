@@ -1,4 +1,5 @@
 import {
+  AutoIncrement,
   AllowNull,
   Column,
   DataType,
@@ -27,6 +28,7 @@ let formatItems: string[] = Object.keys(Format).filter((k) => isNaN(Number(k)));
 @Table
 export class Tournament extends Model {
   @PrimaryKey
+  @AutoIncrement
   @Column(DataType.INTEGER)
   public id: number;
 
@@ -35,6 +37,7 @@ export class Tournament extends Model {
   public name: string;
 
   @Index
+  @AllowNull(false)
   @ForeignKey(() => User)
   @Column(DataType.INTEGER)
   public admin_id: number;

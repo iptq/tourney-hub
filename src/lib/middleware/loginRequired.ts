@@ -22,6 +22,5 @@ export default async function loginRequired(
 }
 
 export async function checkLogin(session): Promise<boolean> {
-  let data = session.data;
-  return data.user;
+  return typeof session.data?.user !== "string";
 }
