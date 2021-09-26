@@ -14,130 +14,78 @@
   ];
 </script>
 
-<div class="nav">
+<nav>
   <div class="container">
-    <div class="row">
-      <div class="nav-left">
-        <a href="/" class="logo">
-          <h3>
-            <img class="logo" src={logo} alt="logo" />
-            tourney hub
-          </h3>
-        </a>
-        <ul>
-          {#each links as link}
-            <li><a href={link.url}>{link.name}</a></li>
-          {/each}
-        </ul>
-      </div>
-      <div>
-        <ul>
-          {#if $session.isLoggedIn}
-            <li>
-              <a href="/user/{$session.user.osu_id}">{$session.user.username}</a
-              >
-            </li>
-          {:else}
-            <li><a href="/auth/login">Login</a></li>
-          {/if}
-        </ul>
-      </div>
+    <div>
+      <a class="nav-link brand" href="/">
+        <img class="logo" src={logo} alt="logo" />
+        <span>Tourney Hub</span>
+      </a>
+      {#each links as link}
+      <a class="nav-link nav-left" href="{link.url}">
+        {link.name}
+      </a>
+      {/each}
+    </div>
+    <div>
+      {#if $session.isLoggedIn}
+        <a class="nav-link nav-right" href="/user/{$session.user.osu_id}">{$session.user.username}</a>
+      {:else}
+        <a class="nav-link nav-right" href="/auth/login">Login</a>
+      {/if}
     </div>
   </div>
-</div>
+</nav>
 
 <style>
-  div.nav {
-    background-color: var(--lighter-bg-color);
-    border-bottom: 1px solid var(--even-lighter-bg-color);
-    margin-bottom: 1rem;
-
-    list-style: none;
+  nav {
+    background-color: var(--bg-color-2);
+    border-bottom: 1px solid var(--bg-color-4);
+    margin-bottom: calc(2 * var(--pad-size));
   }
-
-  div.nav-left {
+  nav > div.container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  @media screen and (max-width: 600px) {
-    div.nav-left {
-      flex-direction: column;
-    }
-  }
-
-  div.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 0;
-    margin-right: 0;
     justify-content: space-between;
     align-items: center;
-    align-content: center;
-  }
-  @media screen and (max-width: 600px) {
-    div.row {
-      flex-direction: column;
-    }
+    gap: var(--pad-size) var(--dense-pad-size);
   }
 
-  ul {
+  nav > div.container > div {
     display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-  @media screen and (max-width: 600px) {
-    ul {
-      flex-direction: column;
-      align-items: center;
-    }
+    flex-direction: row;
   }
 
-  li {
-    padding: auto;
-    display: inline;
-    height: 100%;
-  }
-  @media screen and (max-width: 600px) {
-    li {
-      padding-bottom: 0.5rem;
-    }
-  }
-
-  a {
-    padding: 1rem;
-    text-transform: uppercase;
-    color: var(--main-font-color);
-  }
-  a:hover {
+  nav > div.container a.nav-link {
+    padding: var(--dense-pad-size) var(--pad-size);
     text-decoration: none;
-    box-shadow: inset 0px -3px 0px 0px var(--accent-color);
+    color: var(--main-font-color);
+    text-transform: uppercase;
   }
-
-  h3 {
+  nav >div.container a.nav-link:not(.brand) {
+    padding: var(--pad-size);
+  }
+  
+  nav > div.container a.nav-link:hover {
+    box-shadow:inset 0 -3px 0 0 var(--accent-color);
+  }
+  
+  a.brand {
+    font-weight: bold;
     display: flex;
     align-items: center;
-
-    margin: 0;
+    column-gap: 1rem;
   }
-
-  a.logo {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    font-weight: 400;
-    margin-right: 20px;
-    padding: 10px 0;
-  }
-
-  img.logo {
+  a.brand > img.logo {
     width: 2rem;
     height: 2rem;
+  }
 
-    box-sizing: border-box;
-    display: block;
-    margin-right: 0.5rem;
+  .nav-left {
+    flex-direction: row;
+    align-self: flex-start;
+  }
+  .nav-right {
+    align-self: flex-end;
+    flex-direction: row-reverse;
   }
 </style>

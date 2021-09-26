@@ -60,3 +60,6 @@ featured tournaments/livestreams on home page
 --------------
 should be able to calculate total match time from mp links
 - just a cool stat to view on match pages
+-------------------
+betting system for matches
+- you wouldn't actually win anything tho

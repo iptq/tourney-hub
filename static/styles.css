@@ -10,10 +10,10 @@
   --accent-color: #22b3e7; */
 
   /* Dark scheme */
-  --main-bg-color: #17181b;
-  --lighter-bg-color: #33343d;
-  --slightly-lighter-bg-color: #212229;
-  --even-lighter-bg-color: #454850;
+  --bg-color-1: #191a1d;
+  --bg-color-2: #292a31;
+  --bg-color-3: #33353f;
+  --bg-color-4: #454850;
   --main-font-color: #dedeeb;
   --alt-font-color: #dedeeb;
   --accent-color: #f5b642;
@@ -24,13 +24,16 @@
   --secondary-font-families: Quicksand;
 
   /* Measurements */
-  --border-radius: 4px;
+  --pad-size: 1rem;
+  --dense-pad-size: calc(0.4 * var(--pad-size));
+  --border-radius: 2px;
   --font-size: 14px;
+  --faded-opacity: 0.5;
 }
 
 html {
   /* Colors */
-  background-color: var(--main-bg-color);
+  background-color: var(--bg-color-1);
   color: var(--main-font-color);
 
   /* Fonts */
@@ -58,14 +61,14 @@ p {
 }
 
 hr {
-  margin: 0.5rem 0;
-  border-top: 1px solid var(--even-lighter-bg-color);
+  border-top: 1px solid var(--bg-color-4);
   border-bottom: 0;
+  margin: 0;
 }
 
 .container {
   margin: auto;
-  padding: 0rem 1rem;
+  padding: 0rem;
   max-width: 900px;
 }
 @media screen and (max-width: 600px) {
@@ -75,16 +78,50 @@ hr {
 }
 
 .card {
-  background-color: var(--lighter-bg-color);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 3px rgba(0, 0, 0, 0.12);
-  padding: 1rem;
-
+  background-color: var(--bg-color-4);
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 3px rgba(0, 0, 0, 0.12); */
+  
+  border: 1px solid var(--bg-color-4);  
   border-radius: var(--border-radius);
   margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.5px; */
 }
 @media screen and (max-width: 600px) {
   .card {
     margin: 1rem 0 0 0;
     border-radius: 0px;
   }
+}
+
+.card > div.card-content {
+  background-color: var(--bg-color-2);
+  padding: var(--pad-size);
+}
+
+.card.row-card > div.card-content {
+  padding: var(--dense-pad-size) var(--pad-size);
+}
+.card.row-card > div.card-content:nth-child(2n + 1) {
+  background-color: var(--bg-color-2);
+}
+.card.row-card > div.card-content:nth-child(2n) {
+  background-color: var(--bg-color-3);
+}
+
+.card.row-card > div.row-card-top {
+  display: flex;
+  padding: var(--pad-size);
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.card > h1,
+.card > h2,
+.card > h3 {
+  margin: 0;
+  padding: var(--dense-pad-size) var(--pad-size);
+  background-color: var(--bg-color-3);
 }

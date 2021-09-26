@@ -23,50 +23,84 @@
     name: "Feiri",
     elo: 2345,
     rank: 4710,
-    country: flag("CA"),
+    flag: flag("CA"),
+    country: "Canada",
     tourneyWins: 0,
     tourneyCount: 7,
     picksPlayed: 59,
     picksWon: 27,
-    about: "I play the tech maps and that's about it.",
+    about: "I play the tech maps and that's about it."
   };
 </script>
 
+<div class="card">
+  <div class="card-content profile-head">
+    <div>
+      <img
+        src="https://a.ppy.sh/{user.osu_id}"
+        alt="pfp for user {user.osu_id}"
+      />
+    </div>
+    <div class="player-name">
+      <div>
+        <h1>{player.name}</h1>
+        <div>
+          {player.flag} {player.country}
+        </div>
+      </div>
+    </div>
+    <div>
+      {player.about}
+    </div>
+  </div>
+</div>
+<br>
+
+
+
+
 <div class="columns">
-  <div class="player-card">
-    <div class="player-card-avatar">
+  <div class="card row-card">
+    <div class="player-card-avatar row-card-top card-content">
       <img
         src="https://a.ppy.sh/{user.osu_id}"
         alt="pfp for user {user.osu_id}"
       />
       <h2>{flag(user.country_code)}&nbsp;&nbsp;{user.username}</h2>
     </div>
-    <div class="player-card-stat">
+    <div class="player-card-stat card-content">
       <span>ELO</span>
       {player.elo}
     </div>
-    <div class="player-card-stat">
+    <div class="player-card-stat card-content">
       <span>Bancho Rank</span>
       {user.rank}
     </div>
-    <div class="player-card-stat">
+    <div class="player-card-stat card-content">
       <span>Tournament Wins</span>
       {player.tourneyWins}
     </div>
-    <div class="player-card-stat">
+    <div class="player-card-stat card-content">
       <span>Tournaments Played</span>
       {player.tourneyCount}
     </div>
-    <div class="player-card-stat">
+    <div class="player-card-stat card-content">
       <span>Picks Won</span>
       {player.picksWon}
     </div>
-    <div class="player-card-stat">
+    <div class="player-card-stat card-content">
       <span>Picks Played</span>
       {player.picksPlayed}
     </div>
   </div>
   <div class="profile-info">
+    <div class="card">
+      <CardTitle title="about" />
+      <div class="card-content">
+        {player.about}
+      </div>
+    </div>
+
     {#if user.about}
       <div class="card">
         <CardTitle title="about" />
@@ -77,7 +111,9 @@
       <ProfileNav playerUrl="#" staffUrl="#" highlight="" />
     </div>
     <div class="card">
-      oiawhge iughewgh ewighei auieagie gieagielgerilgbuerbgaer igealg beag
+      <div class="card-content">
+        oiawhge iughewgh ewighei auieagie gieagielgerilgbuerbgaer igealg beag
+      </div>
     </div>
   </div>
 </div>
@@ -86,7 +122,7 @@
   img {
     width: 8rem;
     height: auto;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
   }
 
   div.columns {
@@ -101,49 +137,14 @@
     }
   }
 
-  div.player-card {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border-radius: var(--border-radius);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 3px rgba(0, 0, 0, 0.12);
-    min-width: 16rem;
-  }
-  @media screen and (max-width: 600px) {
-    div.player-card {
-      border-radius: 0;
-      min-width: 100%;
-    }
-  }
-  div.player-card div {
-    padding: 0.5rem 1rem;
-  }
-  div.player-card div:nth-child(2n + 1) {
-    background-color: var(--lighter-bg-color);
-  }
-  div.player-card div:nth-child(2n) {
-    background-color: var(--slightly-lighter-bg-color);
-  }
+  
 
-  div.player-card div.player-card-avatar {
-    padding: 1rem;
+  div.player-card-stat {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  div.player-card div.player-card-avatar h2 {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  div.player-card div.player-card-stat {
-    display: flex;
+    gap: 2rem;
     justify-content: space-between;
   }
-
-  div.player-card div.player-card-stat span {
+  div.player-card-stat span {
     opacity: 0.5;
   }
 
@@ -156,5 +157,21 @@
 
   div.card {
     margin: 0;
+  }
+
+  h1, h2 {
+    margin: 0;
+  }
+
+  div.profile-head {
+    display: flex;
+    flex-direction: row;
+    gap: var(--pad-size);
+  }
+
+  div.player-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 </style>
