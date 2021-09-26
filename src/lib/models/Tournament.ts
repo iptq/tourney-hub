@@ -4,12 +4,15 @@ import {
   BelongsTo,
   Column,
   DataType,
+  Default,
   ForeignKey,
+  HasMany,
   Index,
   Model,
   PrimaryKey,
   Table,
 } from "sequelize-typescript";
+import { Mappool } from "./Mappool";
 import { User } from "./User";
 
 export enum Format {
@@ -46,6 +49,11 @@ export class Tournament extends Model {
   @BelongsTo(() => User)
   public admin: User;
 
+  @AllowNull(false)
+  @Default(false)
+  @Column(DataType.BOOLEAN)
+  public published: boolean;
+
   @Index
   // @Column(DataType.ENUM({ values: formatItems }))
   @Column(DataType.STRING)
@@ -73,4 +81,34 @@ export class Tournament extends Model {
 
   @Column(DataType.TEXT)
   public homepage: string;
+
+  @Column(DataType.STRING)
+  public banner_image: string;
+
+  @HasMany(() => TournamentStage)
+  public stages: TournamentStage[];
+}
+
+@Table
+export class TournamentStage extends Model {
+  @PrimaryKey
+  @AutoIncrement
+  @Column(DataType.INTEGER)
+  public declare id: number;
+
+  @AllowNull(false)
+  @Column(DataType.STRING)
+  public name: string;
+
+  @AllowNull(false)
+  @ForeignKey(() => Tournament)
+  @Column(DataType.INTEGER)
+  public tournament_id: number;
+
+  @ForeignKey(() => Mappool)
+  @Column(DataType.INTEGER)
+  public mappool_id: number;
+
+  @BelongsTo(() => Mappool)
+  public mappool: Mappool;
 }

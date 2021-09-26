@@ -1,4 +1,5 @@
 import {
+  AutoIncrement,
   Column,
   DataType,
   ForeignKey,
@@ -6,13 +7,17 @@ import {
   PrimaryKey,
   Table,
 } from "sequelize-typescript";
-import { Beatmap } from "./Beatmap";
+import { Beatmap } from "./.";
 
 @Table
 export class Mappool extends Model {
   @PrimaryKey
+  @AutoIncrement
   @Column(DataType.INTEGER)
   public declare id: number;
+
+  @Column(DataType.STRING)
+  public image_url: string;
 }
 
 @Table

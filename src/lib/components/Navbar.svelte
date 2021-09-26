@@ -7,10 +7,6 @@
       url: "/tournaments",
       name: "tournaments",
     },
-    {
-      url: "/example-tourney",
-      name: "example tourney",
-    },
   ];
 </script>
 

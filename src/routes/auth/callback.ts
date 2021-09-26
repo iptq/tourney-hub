@@ -25,7 +25,6 @@ export async function get({ locals, query }: Request) {
   return {
     // redirect
     status: 302,
-
     headers: {
       location: "/",
     },

@@ -1,13 +1,32 @@
 import { Tournament } from "$lib/models/Tournament";
+import { User } from "$lib/models/User";
 import type { Request } from "@sveltejs/kit";
 import { transformAndValidate } from "class-transformer-validator";
 import { Length } from "class-validator";
+import { Op } from "sequelize";
 
 // Get a listing of all tournaments
-export async function get(_: Request) {
+export async function get(request: Request) {
+  let session = request.locals.session.data;
+
+  // if the user is logged in, _also_ select tournaments that the user owns
+  // TODO: as well as if they're an admin
+  let predicate: any = { published: true };
+  if (session.user) {
+    predicate = { [Op.or]: [predicate, { admin_id: session.user.osu_id }] };
+  }
+  console.log("PREDICATE", predicate);
+
+  // query for the tournaments
   let tournaments = await Tournament.findAll({
-    attributes: ["name"],
-    limit: 20,
+    where: predicate,
+    attributes: ["id", "name", "admin_id"],
+    include: [
+      {
+        model: User,
+        attributes: ["osu_id", "username"],
+      },
+    ],
   });
 
   return { body: tournaments };
