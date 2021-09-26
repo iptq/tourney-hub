@@ -4,6 +4,7 @@ import {
   BelongsTo,
   Column,
   DataType,
+  Default,
   ForeignKey,
   Index,
   Model,
@@ -45,6 +46,11 @@ export class Tournament extends Model {
 
   @BelongsTo(() => User)
   public admin: User;
+
+  @AllowNull(false)
+  @Default(false)
+  @Column(DataType.BOOLEAN)
+  public published: boolean;
 
   @Index
   // @Column(DataType.ENUM({ values: formatItems }))
