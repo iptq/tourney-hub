@@ -24,7 +24,7 @@ export async function get(request: Request) {
     include: [
       {
         model: User,
-        attributes: ["username"],
+        attributes: ["osu_id", "username"],
       },
     ],
   });
