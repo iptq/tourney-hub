@@ -35,5 +35,6 @@
     <li>auto-ref bots</li>
     <li>team creation?</li>
     <li>discord bot for scheduling and stuff</li>
+    <li>automatic calendar creation for importing into google calendar and thunderbird</li>
   </ul>
 </div>
