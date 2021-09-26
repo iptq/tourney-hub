@@ -11,15 +11,21 @@
 
   /* Dark scheme */
   --main-bg-color: #17181b;
-  --lighter-bg-color: #33343b;
-  --slightly-lighter-bg-color: #232429;
+  --lighter-bg-color: #33343d;
+  --slightly-lighter-bg-color: #212229;
   --even-lighter-bg-color: #454850;
   --main-font-color: #dedeeb;
   --alt-font-color: #dedeeb;
   --accent-color: #f5b642;
+  --accent-color-darker: #d39f3f;
+  --accent-color-even-darker: #b88c3b;
 
   --main-font-families: Roboto, Arial, Helvetica, sans-serif;
   --secondary-font-families: Quicksand;
+
+  /* Measurements */
+  --border-radius: 4px;
+  --font-size: 14px;
 }
 
 html {
@@ -29,6 +35,7 @@ html {
 
   /* Fonts */
   font-family: var(--main-font-families);
+  font-size: var(--font-size);
 }
 
 body {
@@ -59,7 +66,12 @@ hr {
 .container {
   margin: auto;
   padding: 0rem 1rem;
-  max-width: 1140px;
+  max-width: 900px;
+}
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 0;
+  }
 }
 
 .card {
@@ -67,6 +79,12 @@ hr {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 3px rgba(0, 0, 0, 0.12);
   padding: 1rem;
 
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   margin-top: 1rem;
+}
+@media screen and (max-width: 600px) {
+  .card {
+    margin: 1rem 0 0 0;
+    border-radius: 0px;
+  }
 }

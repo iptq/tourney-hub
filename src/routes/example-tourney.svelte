@@ -104,7 +104,7 @@
   }
   @media screen and (max-width: 600px) {
     div.tourney-container {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
   }
 
