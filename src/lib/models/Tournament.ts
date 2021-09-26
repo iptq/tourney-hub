@@ -1,9 +1,9 @@
 import {
-  AutoIncrement,
   AllowNull,
+  AutoIncrement,
+  BelongsTo,
   Column,
   DataType,
-  BelongsTo,
   ForeignKey,
   Index,
   Model,

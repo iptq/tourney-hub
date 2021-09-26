@@ -1,5 +1,3 @@
-import { chain } from "$lib/middleware";
-import loginRequired from "$lib/middleware/loginRequired";
 import { Tournament } from "$lib/models/Tournament";
 import type { Request } from "@sveltejs/kit";
 import { transformAndValidate } from "class-transformer-validator";
@@ -22,7 +20,9 @@ export class TournamentCreateForm {
 
 // Create a new tournament
 export async function post(request: Request) {
-  let body = <TournamentCreateForm> await transformAndValidate(TournamentCreateForm, <string> request.body);
+  let body = <TournamentCreateForm>(
+    await transformAndValidate(TournamentCreateForm, <string>request.body)
+  );
   let session = request.locals.session.data;
   console.log("FORM BODY", body);
   console.log("SESSION", session);
@@ -38,4 +38,4 @@ export async function post(request: Request) {
       id: dbTournament.id,
     },
   };
-};
+}
