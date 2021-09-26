@@ -70,6 +70,7 @@ async function getInitialUserInfo(token: IToken): Promise<InitialUserInfo> {
     let dbUser = new User({
       osu_id: apiUser["id"],
       username: apiUser["username"],
+      country_code: apiUser["country_code"],
       rank: apiUser["statistics"]["global_rank"],
       pp: apiUser["statistics"]["pp"],
 

@@ -10,7 +10,7 @@ import {
 export class Beatmap extends Model {
   @PrimaryKey
   @Column(DataType.INTEGER)
-  public id: number;
+  public declare id: number;
 
   @Column(DataType.INTEGER)
   public set_id: number;

@@ -16,6 +16,9 @@ export class User extends Model {
   public username: string;
 
   @Column(DataType.STRING)
+  public country_code: string;
+
+  @Column(DataType.STRING)
   public about: string;
 
   @Column(DataType.FLOAT)

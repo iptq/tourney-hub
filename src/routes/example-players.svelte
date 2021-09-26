@@ -1,6 +1,6 @@
 <script>
   import CardTitle from "$lib/components/CardTitle.svelte";
-  import MappoolBanner from "$lib/components/mappool/MappoolBanner.svelte";
+  // import MappoolBanner from "$lib/components/mappool/MappoolBanner.svelte";
   import TourneyNav from "$lib/components/TourneyNav.svelte";
   import BannerCard from "$lib/components/BannerCard.svelte";
 
@@ -11,7 +11,7 @@
     url: "/example-tournament",
   };
 
-  let mappools = [
+  [
     {
       imageUrl: "https://i.redd.it/y8deg1o011n71.jpg",
       stageName: "Semifinals",

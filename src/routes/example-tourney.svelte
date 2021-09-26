@@ -1,6 +1,6 @@
 <script>
   import CardTitle from "$lib/components/CardTitle.svelte";
-  import MappoolBanner from "$lib/components/mappool/MappoolBanner.svelte";
+  // import MappoolBanner from "$lib/components/mappool/MappoolBanner.svelte";
   import TourneyNav from "$lib/components/TourneyNav.svelte";
   import BannerCard from "$lib/components/BannerCard.svelte";
 

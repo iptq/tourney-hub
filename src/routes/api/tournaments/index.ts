@@ -4,7 +4,7 @@ import { transformAndValidate } from "class-transformer-validator";
 import { Length } from "class-validator";
 
 // Get a listing of all tournaments
-export async function get(request: Request) {
+export async function get(_: Request) {
   let tournaments = await Tournament.findAll({
     attributes: ["name"],
     limit: 20,

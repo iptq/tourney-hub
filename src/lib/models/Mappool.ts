@@ -12,7 +12,7 @@ import { Beatmap } from "./Beatmap";
 export class Mappool extends Model {
   @PrimaryKey
   @Column(DataType.INTEGER)
-  public id: number;
+  public declare id: number;
 }
 
 @Table

@@ -1,7 +1,5 @@
 <script context="module">
-  export async function load({ page, session, fetch }) {
-    let id = page.params.id;
-    let params = new URLSearchParams({ id });
+  export async function load({ fetch }) {
     let result = await fetch("/api/tournaments");
     let tournaments = await result.json();
     if (tournaments === null) return { status: 404 };

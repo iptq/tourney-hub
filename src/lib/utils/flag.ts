@@ -1,7 +1,7 @@
 // stolen from https://github.com/thekelvinliu/country-code-emoji/blob/main/src/index.js
 export function flag(cc: string) {
   const CC_REGEX = /^[a-z]{2}$/i;
-  const FLAG_LENGTH = 4;
+  // const FLAG_LENGTH = 4;
   const OFFSET = 127397;
 
   if (!CC_REGEX.test(cc)) {
@@ -13,6 +13,8 @@ export function flag(cc: string) {
     );
   }
 
-  const codePoints = [...cc.toUpperCase()].map((c) => c.codePointAt() + OFFSET);
+  const codePoints = [...cc.toUpperCase()].map(
+    (c) => c.codePointAt(0) + OFFSET
+  );
   return String.fromCodePoint(...codePoints);
 }

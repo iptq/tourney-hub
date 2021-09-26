@@ -1,5 +1,5 @@
 <script context="module">
-  export async function load({ page, session, fetch }) {
+  export async function load({ page, fetch }) {
     let id = page.params.id;
     let params = new URLSearchParams({ id });
     let result = await fetch("/api/tournaments/info?" + params);

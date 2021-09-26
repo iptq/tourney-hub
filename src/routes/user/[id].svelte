@@ -1,5 +1,5 @@
 <script context="module">
-  export async function load({ page, session, fetch }) {
+  export async function load({ page, fetch }) {
     let id = page.params.id;
     let params = new URLSearchParams({ id });
     let result = await fetch("/api/user/info?" + params);
@@ -13,7 +13,6 @@
 </script>
 
 <script>
-  import { page } from "$app/stores";
   import CardTitle from "$lib/components/CardTitle.svelte";
   import ProfileNav from "$lib/components/ProfileNav.svelte";
   import { flag } from "$lib/utils/flag";
@@ -41,7 +40,7 @@
         src="https://a.ppy.sh/{user.osu_id}"
         alt="pfp for user {user.osu_id}"
       />
-      <h2>{player.country}&nbsp;&nbsp;{user.username}</h2>
+      <h2>{flag(user.country_code)}&nbsp;&nbsp;{user.username}</h2>
     </div>
     <div class="player-card-stat">
       <span>ELO</span>
@@ -69,10 +68,12 @@
     </div>
   </div>
   <div class="profile-info">
-    <div class="card">
-      <CardTitle title="about" />
-      {player.about}
-    </div>
+    {#if user.about}
+      <div class="card">
+        <CardTitle title="about" />
+        {user.about}
+      </div>
+    {/if}
     <div>
       <ProfileNav playerUrl="#" staffUrl="#" highlight="" />
     </div>

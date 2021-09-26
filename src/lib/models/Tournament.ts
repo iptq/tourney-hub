@@ -24,14 +24,14 @@ export enum Format {
   F8v8,
 }
 
-let formatItems: string[] = Object.keys(Format).filter((k) => isNaN(Number(k)));
+// let formatItems: string[] = Object.keys(Format).filter((k) => isNaN(Number(k)));
 
 @Table
 export class Tournament extends Model {
   @PrimaryKey
   @AutoIncrement
   @Column(DataType.INTEGER)
-  public id: number;
+  public declare id: number;
 
   @AllowNull(false)
   @Column(DataType.STRING)
