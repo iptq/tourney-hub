@@ -20,6 +20,11 @@
   --accent-color-darker: #d39f3f;
   --accent-color-even-darker: #b88c3b;
 
+  --red: #e1335f;
+  --blue: #3751c3;
+  --win-color: #62b035;
+  --loss-color: #bd374f; 
+
   --main-font-families: Roboto, Arial, Helvetica, sans-serif;
   --secondary-font-families: Quicksand;
 
@@ -45,6 +50,14 @@ body {
   /* margins + padding */
   margin: 0;
   padding: 0;
+}
+
+.weight-bold {
+  font-weight: bold;
+}
+
+.faded {
+  opacity: var(--faded-opacity);
 }
 
 a {

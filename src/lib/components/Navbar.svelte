@@ -37,7 +37,7 @@
   nav {
     background-color: var(--bg-color-2);
     border-bottom: 1px solid var(--bg-color-4);
-    margin-bottom: calc(2 * var(--pad-size));
+    margin-bottom: var(--pad-size);
   }
   nav > div.container {
     display: flex;
