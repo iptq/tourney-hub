@@ -303,7 +303,7 @@
 
 <style>
   img.pfp {
-    width: 8rem;
+    width: 10rem;
     height: auto;
     border-radius: var(--border-radius);
   }

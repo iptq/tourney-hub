@@ -16,6 +16,7 @@
 
 <style>
   div.card-nav {
+    font-weight: bold;
     display: flex;
     flex-direction: row;
     justify-content: center;

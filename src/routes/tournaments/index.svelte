@@ -11,6 +11,8 @@
 </script>
 
 <script>
+  import CardTitle from "$lib/components/CardTitle.svelte";
+
   export let tournaments;
 </script>
 
@@ -25,28 +27,17 @@
       Create New
     </a>
   </div>
-</div>
-
-<table>
-  <thead>
-    <tr>
-      <th>Tournament Name</th>
-      <th>Host</th>
-    </tr>
-  </thead>
-  <tbody>
+  <div class="tourney-list card">
+    <CardTitle title="Listing"/>
     {#each tournaments as tournament}
-      <tr>
-        <td><a href={"/tournaments/" + tournament.id}>{tournament.name}</a></td>
-        <td
-          ><a href={"/user/" + tournament.admin.osu_id}
-            >{tournament.admin.username}</a
-          ></td
-        >
-      </tr>
+    <hr>
+    <div class="card-content tourney-card">
+      <a href="/tournaments/{tournament.id}">{tournament.name}</a> by 
+      <a href="/user/{tournament.admin.osu_id}">{tournament.admin.username}</a>
+    </div>
     {/each}
-  </tbody>
-</table>
+  </div>
+</div>
 
 <style>
   div.t-listing {
@@ -82,6 +73,11 @@
   }
   div.search-bar > input:focus {
     outline: none;
+  }
+
+
+  div.tourney-list {
+    
   }
 
   .search-icon {

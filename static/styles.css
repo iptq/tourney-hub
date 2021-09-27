@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto:wght@400;700&display=swap");
 :root {
   /* Light scheme */
-  /* --main-bg-color: #e8eef1;
-  --lighter-bg-color: #ffffff;
-  --slightly-lighter-bg-color: #f4f7f8;
-  --even-lighter-bg-color: #e2e5e7;
-  --main-font-color: #38383b;
-  --alt-font-color: #f5f8fa;
-  --accent-color: #22b3e7; */
+  /* --bg-color-1: #e9edfa;
+  --bg-color-2: #fafafd;
+  --bg-color-3: #eceef5;
+  --bg-color-4: #bbbfca;
+  --main-font-color: #2b2b30;
+  --alt-font-color: #2b2b30;
+  --accent-color: #f5b642;
+  --accent-color-darker: #d39f3f;
+  --accent-color-even-darker: #b88c3b; */
+
 
   /* Dark scheme */
   --bg-color-1: #191a1d;
