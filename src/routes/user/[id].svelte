@@ -160,7 +160,11 @@
         </div>
         <div class="osu-link">
           <a class="button" href="https://osu.ppy.sh/users/{user.osu_id}">
-            <img class="icon" src="/icons/external-link-alt-solid.svg" alt="icon"/>
+            <img
+              class="icon"
+              src="/icons/external-link-alt-solid.svg"
+              alt="icon"
+            />
             osu! profile
           </a>
         </div>
@@ -249,7 +253,9 @@
                           />
                         </td>
                         <td>
-                          <span><a href="/user/{player.id}">{player.name}</a></span>
+                          <span
+                            ><a href="/user/{player.id}">{player.name}</a></span
+                          >
                         </td>
                         <td>
                           <span class="faded">{player.cost.toFixed(2)}</span>
@@ -271,7 +277,9 @@
                           <span class="faded">{player.cost.toFixed(2)}</span>
                         </td>
                         <td>
-                          <span><a href="/user/{player.id}">{player.name}</a></span>
+                          <span
+                            ><a href="/user/{player.id}">{player.name}</a></span
+                          >
                         </td>
                         <td>
                           <img

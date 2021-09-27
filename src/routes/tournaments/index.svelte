@@ -17,15 +17,14 @@
 <div class="t-listing">
   <div class="content-header">
     <div class="search-bar">
-      <img class="icon search-icon" src="/icons/search-solid.svg" alt="icon"/>
-      <input type="text" placeholder="search">
+      <img class="icon search-icon" src="/icons/search-solid.svg" alt="icon" />
+      <input type="text" placeholder="search" />
     </div>
     <a class="button" href="/tournaments/create">
-      <img class="icon" src="/icons/plus-square-regular.svg" alt="icon"/>
+      <img class="icon" src="/icons/plus-square-regular.svg" alt="icon" />
       Create New
     </a>
   </div>
-
 </div>
 
 <table>
@@ -86,6 +85,7 @@
   }
 
   .search-icon {
-    filter: invert(96%) sepia(1%) saturate(4258%) hue-rotate(193deg) brightness(96%) contrast(91%);
+    filter: invert(96%) sepia(1%) saturate(4258%) hue-rotate(193deg)
+      brightness(96%) contrast(91%);
   }
 </style>

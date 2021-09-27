@@ -162,5 +162,6 @@ img.icon {
 }
 
 a.button img.icon {
-  filter: invert(8%) sepia(6%) saturate(925%) hue-rotate(187deg) brightness(93%) contrast(94%);
+  filter: invert(8%) sepia(6%) saturate(925%) hue-rotate(187deg) brightness(93%)
+    contrast(94%);
 }

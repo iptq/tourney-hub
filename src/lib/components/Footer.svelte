@@ -1,11 +1,11 @@
 <script>
   const links = [
     { url: "https://github.com/iptq/tourney-hub", name: "source" },
-    { url: "https://kit.svelte.dev", name: "svelte" }
+    { url: "https://kit.svelte.dev", name: "svelte" },
   ];
 </script>
 
-<hr>
+<hr />
 <footer>
   <div class="container">
     <div class="footer-links">
@@ -25,7 +25,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   div.footer-links {
     display: flex;
     gap: var(--pad-size);
