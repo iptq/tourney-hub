@@ -29,7 +29,7 @@
       <li>mappool caching</li>
     </ul>
   </div>
-  <hr>
+  <hr />
   <div class="card-content">
     <p>Feature ideas:</p>
     <ul>

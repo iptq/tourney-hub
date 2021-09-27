@@ -18,14 +18,16 @@
         <span>Tourney Hub</span>
       </a>
       {#each links as link}
-      <a class="nav-link nav-left" href="{link.url}">
-        {link.name}
-      </a>
+        <a class="nav-link nav-left" href={link.url}>
+          {link.name}
+        </a>
       {/each}
     </div>
     <div>
       {#if $session.isLoggedIn}
-        <a class="nav-link nav-right" href="/user/{$session.user.osu_id}">{$session.user.username}</a>
+        <a class="nav-link nav-right" href="/user/{$session.user.osu_id}"
+          >{$session.user.username}</a
+        >
       {:else}
         <a class="nav-link nav-right" href="/auth/login">Login</a>
       {/if}
@@ -57,14 +59,14 @@
     color: var(--main-font-color);
     text-transform: uppercase;
   }
-  nav >div.container a.nav-link:not(.brand) {
+  nav > div.container a.nav-link:not(.brand) {
     padding: var(--pad-size);
   }
-  
+
   nav > div.container a.nav-link:hover {
-    box-shadow:inset 0 -3px 0 0 var(--accent-color);
+    box-shadow: inset 0 -3px 0 0 var(--accent-color);
   }
-  
+
   a.brand {
     font-weight: bold;
     display: flex;

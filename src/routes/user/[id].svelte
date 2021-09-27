@@ -18,7 +18,6 @@
   import { flag } from "$lib/utils/flag";
   import Badge from "$lib/components/Badge.svelte";
   import Metric from "$lib/components/Metric.svelte";
-  import { plainToClassFromExist } from "class-transformer";
 
   export let user;
 
@@ -32,85 +31,104 @@
     tourneyCount: 7,
     picksPlayed: 59,
     picksWon: 27,
-    about: "Strengths: tech, alt, gimmick, anything weird that isn't too fast ..... Weaknesses: (death)streams"
+    about:
+      "Strengths: tech, alt, gimmick, anything weird that isn't too fast ..... Weaknesses: (death)streams",
   };
 
-  let cardNavLinks = [{
-    name: "match history",
-    url: "#"
-  }, {
-    name: "staffing history",
-    url: "#"
-  }];
+  let cardNavLinks = [
+    {
+      name: "match history",
+      url: "#",
+    },
+    {
+      name: "staffing history",
+      url: "#",
+    },
+  ];
   let cardNavHighlight = "match history";
-  
-  let matches = [{
-    tourneyId: 2,
-    tourneyName: "Feiri's Test Tournament",
-    matchId: 69,
-    roundName: "Semifinals",
-    date: "Sep 20 2021  10:27 PM",
-    timeAgo: "3 days ago",
-    duration: "34 mins",
-    win: false,
-    teamRed: {
-      players: [{
-        id: 3214844,
-        name: "Feiri",
-        cost: 0.69
-      }, {
-        id: 2688103,
-        name: "IOException",
-        cost: 1.42
-      }],
-      mapsWon: 4,
-    }, 
-    teamBlue: {
-      players: [{
-        id: 3388082,
-        name: "ThunderBird2678",
-        cost: 1.10
-      }, {
-        id: 124493,
-        name: "chocomint",
-        cost: 3.14
-      }],
-      mapsWon: 5
-    }
-  }, {
-    tourneyId: 2,
-    tourneyName: "Feiri's Test Tournament",
-    matchId: 69,
-    roundName: "Quarterfinals",
-    date: "Sep 20 2021  10:27 PM",
-    timeAgo: "3 days ago",
-    duration: "34 mins",
-    win: true,
-    teamRed: {
-      players: [{
-        id: 3214844,
-        name: "Feiri",
-        cost: 7.27
-      }, {
-        id: 2688103,
-        name: "IOException",
-        cost: 1.42
-      }],
-      mapsWon: 5,
-    }, 
-    teamBlue: {
-      players: [{
-        id: 226597,
-        name: "WWWWWWWWWWWWWWWWWWWW",
-        cost: 1.11
-      }, {
-        id: 895581,
-        name: "-GN",
-        cost: 1.01
-      }],
-      mapsWon: 1
-    }
-  }]
+
+  let matches = [
+    {
+      tourneyId: 2,
+      tourneyName: "Feiri's Test Tournament",
+      matchId: 69,
+      roundName: "Semifinals",
+      date: "Sep 20 2021  10:27 PM",
+      timeAgo: "3 days ago",
+      duration: "34 mins",
+      win: false,
+      teamRed: {
+        players: [
+          {
+            id: 3214844,
+            name: "Feiri",
+            cost: 0.69,
+          },
+          {
+            id: 2688103,
+            name: "IOException",
+            cost: 1.42,
+          },
+        ],
+        mapsWon: 4,
+      },
+      teamBlue: {
+        players: [
+          {
+            id: 3388082,
+            name: "ThunderBird2678",
+            cost: 1.1,
+          },
+          {
+            id: 124493,
+            name: "chocomint",
+            cost: 3.14,
+          },
+        ],
+        mapsWon: 5,
+      },
+    },
+    {
+      tourneyId: 2,
+      tourneyName: "Feiri's Test Tournament",
+      matchId: 69,
+      roundName: "Quarterfinals",
+      date: "Sep 20 2021  10:27 PM",
+      timeAgo: "3 days ago",
+      duration: "34 mins",
+      win: true,
+      teamRed: {
+        players: [
+          {
+            id: 3214844,
+            name: "Feiri",
+            cost: 7.27,
+          },
+          {
+            id: 2688103,
+            name: "IOException",
+            cost: 1.42,
+          },
+        ],
+        mapsWon: 5,
+      },
+      teamBlue: {
+        players: [
+          {
+            id: 226597,
+            name: "WWWWWWWWWWWWWWWWWWWW",
+            cost: 1.11,
+          },
+          {
+            id: 895581,
+            name: "-GN",
+            cost: 1.01,
+          },
+        ],
+        mapsWon: 1,
+      },
+    },
+  ];
   console.log(user);
 </script>
 
@@ -127,18 +145,19 @@
           <div>
             <h1>{user.username}</h1>
             <div>
-              {flag(user.country_code)} {user.country_code}
+              {flag(user.country_code)}
+              {user.country_code}
             </div>
           </div>
         </div>
       </div>
       <div class="main-stats">
-        <Metric name="ELO" value={player.elo}/>
-        <Metric name="Rank" value={1}/>
+        <Metric name="ELO" value={player.elo} />
+        <Metric name="Rank" value={1} />
       </div>
     </div>
-  </div>  
-  
+  </div>
+
   <!-- Everything below the head -->
   <div class="columns">
     <!-- small column of stats -->
@@ -181,62 +200,69 @@
       <div class="card">
         <CardNav links={cardNavLinks} highlight={cardNavHighlight} />
         {#each matches as match}
-        <hr>
-        <div class="card-content match-card {match.win}">
-          <div class="match-header">
-            <div>
-              <span class="weight-bold">{match.tourneyName}</span> | {match.roundName} | {match.timeAgo}
-            </div>
-            {#if match.win}
-            <Badge name="win" color="var(--win-color)"/>
-            {:else}
-            <Badge name="loss" color="var(--loss-color)"/>
-            {/if}
-          </div>
-          <div class="match-body">
-            <div class="match-result">
-              <div class="match-team team-red">
-                <table>
-                  {#each match.teamRed.players as player}
-                  <tr>
-                    <td>
-                      <img src="https://a.ppy.sh/{player.id}" alt="{player.id}'s pfp">
-                    </td>
-                    <td>
-                      <span>{player.name}</span>
-                    </td>
-                    <td>
-                      <span class="faded">{player.cost.toFixed(2)}</span>
-                    </td>
-                  </tr>
-                  {/each}
-                </table>
-              </div>            
-              <div class="match-score">
-                <span class="red-score">{match.teamRed.mapsWon}</span>
-                <span>:</span>
-                <span class="blue-score">{match.teamBlue.mapsWon}</span>
+          <hr />
+          <div class="card-content match-card {match.win}">
+            <div class="match-header">
+              <div>
+                <span class="weight-bold">{match.tourneyName}</span> | {match.roundName}
+                | {match.timeAgo}
               </div>
-              <div class="match-team team-blue">
-                <table>
-                  {#each match.teamBlue.players as player}
-                  <tr>
-                    <td>
-                      <span class="faded">{player.cost.toFixed(2)}</span>
-                    </td>
-                    <td>
-                      <span>{player.name}</span>
-                    </td>
-                    <td>
-                      <img src="https://a.ppy.sh/{player.id}" alt="{player.id}'s pfp">
-                    </td>
-                  </tr>
-                  {/each}
-                </table>
+              {#if match.win}
+                <Badge name="win" color="var(--win-color)" />
+              {:else}
+                <Badge name="loss" color="var(--loss-color)" />
+              {/if}
+            </div>
+            <div class="match-body">
+              <div class="match-result">
+                <div class="match-team team-red">
+                  <table>
+                    {#each match.teamRed.players as player}
+                      <tr>
+                        <td>
+                          <img
+                            src="https://a.ppy.sh/{player.id}"
+                            alt="{player.id}'s pfp"
+                          />
+                        </td>
+                        <td>
+                          <span>{player.name}</span>
+                        </td>
+                        <td>
+                          <span class="faded">{player.cost.toFixed(2)}</span>
+                        </td>
+                      </tr>
+                    {/each}
+                  </table>
+                </div>
+                <div class="match-score">
+                  <span class="red-score">{match.teamRed.mapsWon}</span>
+                  <span>:</span>
+                  <span class="blue-score">{match.teamBlue.mapsWon}</span>
+                </div>
+                <div class="match-team team-blue">
+                  <table>
+                    {#each match.teamBlue.players as player}
+                      <tr>
+                        <td>
+                          <span class="faded">{player.cost.toFixed(2)}</span>
+                        </td>
+                        <td>
+                          <span>{player.name}</span>
+                        </td>
+                        <td>
+                          <img
+                            src="https://a.ppy.sh/{player.id}"
+                            alt="{player.id}'s pfp"
+                          />
+                        </td>
+                      </tr>
+                    {/each}
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-        </div>
         {/each}
       </div>
     </div>
@@ -288,7 +314,7 @@
     margin: 0;
   }
 
-  h1, h2 {
+  h1 {
     margin: 0;
   }
 

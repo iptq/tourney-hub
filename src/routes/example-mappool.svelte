@@ -76,7 +76,7 @@
 <TourneyNav {frontUrl} {mappoolsUrl} {playersUrl} highlight="None" />
 
 <div class="card">
-  <CardTitle title="Semifinals" line={false} />
+  <CardTitle title="Semifinals" />
   <table>
     <tr>
       <th class="cover">cover</th>

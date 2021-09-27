@@ -16,6 +16,8 @@
 
 <a href="/tournaments/create">Create New Tournament</a>
 
+<div />
+
 <table>
   <thead>
     <tr>

@@ -68,8 +68,9 @@
         <div class="team-member">
           <div class="team-member-avatar">
             <img class="avatar" src="https://a.ppy.sh/{member.userId}" alt="" />
-            <a href="https://osu.ppy.sh/users/{member.userId}" class="member-name"
-              >{member.name}</a
+            <a
+              href="https://osu.ppy.sh/users/{member.userId}"
+              class="member-name">{member.name}</a
             >
           </div>
           <div class="team-member-role">
@@ -84,15 +85,15 @@
       <CardTitle title={"Description"} />
       <div class="card-content">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <br>
+        <br />
         <p>yeah yeah ok 1v1 or some shit</p>
       </div>
     </div>
@@ -100,7 +101,7 @@
       <CardTitle title={"Another Custom Section"} />
       <div class="card-content">
         <p>hurr durr sex penis</p>
-        <br>
+        <br />
         <p>xdxdxdxdxd</p>
       </div>
     </div>

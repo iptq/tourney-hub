@@ -12,7 +12,7 @@
     {/if}
   {/each}
 </div>
-<hr>
+<hr />
 
 <style>
   div.card-nav {
@@ -20,7 +20,7 @@
     flex-direction: row;
     background-color: var(--bg-color-3);
   }
-  
+
   a {
     padding: var(--dense-pad-size) var(--pad-size);
     height: 100%;
@@ -35,6 +35,6 @@
 
   a.highlight {
     opacity: 1;
-    box-shadow:inset 0 -2px 0 0 var(--accent-color);
+    box-shadow: inset 0 -2px 0 0 var(--accent-color);
   }
 </style>
