@@ -18,7 +18,10 @@
   div.card-nav {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     background-color: var(--bg-color-3);
+    border: 1px solid var(--bg-color-4);
+    /* border-bottom: 1px solid var(--accent-color); */
   }
 
   a {

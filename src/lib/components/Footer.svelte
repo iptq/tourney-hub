@@ -1,46 +1,34 @@
 <script>
   const links = [
-    { url: "https://kit.svelte.dev", name: "svelte" },
-    { url: "https://osu.technology", name: "ਤਕਨਾਲੋਜੀ" },
+    { url: "https://github.com/iptq/tourney-hub", name: "source" },
+    { url: "https://kit.svelte.dev", name: "svelte" }
   ];
 </script>
 
-<div class="wrapper">
+<hr>
+<footer>
   <div class="container">
-    <ul>
+    <div class="footer-links">
       {#each links as link}
-        <li><a href={link.url}>{link.name}</a></li>
+        <a href={link.url}>{link.name}</a>
       {/each}
-    </ul>
+    </div>
   </div>
-</div>
+</footer>
 
 <style>
-  .wrapper {
+  footer {
+    background-color: var(--bg-color-2);
     height: 100%;
-
-    background-color: var(--lighter-bg-color);
-    border-top: 1px solid var(--even-lighter-bg-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 1rem 0rem;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  li {
-    display: inline-block;
-    padding: 0rem 1rem;
-  }
-
-  li a {
-    margin: 0 auto;
-    color: var(--main-font-color);
-  }
-  li a:hover {
-    text-decoration: none;
+  
+  div.footer-links {
+    display: flex;
+    gap: var(--pad-size);
+    text-transform: capitalize;
   }
 </style>

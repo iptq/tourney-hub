@@ -29,6 +29,8 @@
     country: "Canada",
     tourneyWins: 0,
     tourneyCount: 7,
+    matchesWon: 1,
+    matchesPlayed: 2,
     picksPlayed: 59,
     picksWon: 27,
     about:
@@ -129,7 +131,6 @@
       },
     },
   ];
-  console.log(user);
 </script>
 
 <div class="profile">
@@ -138,6 +139,7 @@
     <div class="card-content profile-head">
       <div class="profile-head-info">
         <img
+          class="pfp"
           src="https://a.ppy.sh/{user.osu_id}"
           alt="pfp for user {user.osu_id}"
         />
@@ -151,9 +153,17 @@
           </div>
         </div>
       </div>
-      <div class="main-stats">
-        <Metric name="ELO" value={player.elo} />
-        <Metric name="Rank" value={1} />
+      <div class="profile-right">
+        <div class="main-stats">
+          <Metric name="ELO" value={player.elo} />
+          <Metric name="Rank" value={1} />
+        </div>
+        <div class="osu-link">
+          <a class="button" href="https://osu.ppy.sh/users/{user.osu_id}">
+            <img class="icon" src="/icons/external-link-alt-solid.svg" alt="icon"/>
+            osu! profile
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -167,12 +177,24 @@
         {user.rank}
       </div>
       <div class="player-card-stat card-content">
+        <span>PP</span>
+        {user.pp}
+      </div>
+      <div class="player-card-stat card-content">
         <span>Tournament Wins</span>
         {player.tourneyWins}
       </div>
       <div class="player-card-stat card-content">
         <span>Tournaments Played</span>
         {player.tourneyCount}
+      </div>
+      <div class="player-card-stat card-content">
+        <span>Matches Won</span>
+        {player.matchesWon}
+      </div>
+      <div class="player-card-stat card-content">
+        <span>Matches Played</span>
+        {player.matchesPlayed}
       </div>
       <div class="player-card-stat card-content">
         <span>Picks Won</span>
@@ -221,12 +243,13 @@
                       <tr>
                         <td>
                           <img
+                            class="pfp"
                             src="https://a.ppy.sh/{player.id}"
                             alt="{player.id}'s pfp"
                           />
                         </td>
                         <td>
-                          <span>{player.name}</span>
+                          <span><a href="/user/{player.id}">{player.name}</a></span>
                         </td>
                         <td>
                           <span class="faded">{player.cost.toFixed(2)}</span>
@@ -248,10 +271,11 @@
                           <span class="faded">{player.cost.toFixed(2)}</span>
                         </td>
                         <td>
-                          <span>{player.name}</span>
+                          <span><a href="/user/{player.id}">{player.name}</a></span>
                         </td>
                         <td>
                           <img
+                            class="pfp"
                             src="https://a.ppy.sh/{player.id}"
                             alt="{player.id}'s pfp"
                           />
@@ -270,7 +294,7 @@
 </div>
 
 <style>
-  img {
+  img.pfp {
     width: 8rem;
     height: auto;
     border-radius: var(--border-radius);
@@ -330,11 +354,25 @@
       flex-direction: column;
     }
   }
+
+  div.profile-head > div.profile-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--pad-size);
+  }
+  @media screen and (max-width: 600px) {
+    div.profile-head > div.profile-right {
+      align-items: flex-start;
+    }
+  }
   div.profile-head div.main-stats {
     display: flex;
     flex-direction: row;
     gap: var(--pad-size);
   }
+
   div.profile-head-info {
     display: flex;
     flex-direction: row;
