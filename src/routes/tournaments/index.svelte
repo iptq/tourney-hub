@@ -12,20 +12,34 @@
 
 <script>
   import CardTitle from "$lib/components/CardTitle.svelte";
+  import CheckBox from "$lib/components/forms/CheckBox.svelte";
+  import RadioButton from "$lib/components/forms/RadioButton.svelte";
+  import NumberInput from "$lib/components/forms/NumberInput.svelte";
 
   export let tournaments;
 </script>
 
 <div class="t-listing">
   <div class="content-header">
-    <div class="search-bar">
-      <img class="icon search-icon" src="/icons/search-solid.svg" alt="icon" />
-      <input type="text" placeholder="search" />
+    <div class="panel-top">
+      <div class="search-bar">
+        <img class="icon search-icon" src="/icons/search-solid.svg" alt="icon" />
+        <input type="text" placeholder="search" />
+      </div>
+      <a class="button" href="/tournaments/create">
+        <img class="icon" src="/icons/plus-square-regular.svg" alt="icon" />
+        Create New
+      </a>
     </div>
-    <a class="button" href="/tournaments/create">
-      <img class="icon" src="/icons/plus-square-regular.svg" alt="icon" />
-      Create New
-    </a>
+    <div class="filters">
+      <CheckBox text="filter1"/>
+      <CheckBox text="filter2"/>
+      <CheckBox text="filter3"/>
+      <RadioButton text="filter3" check={true}/>
+      <RadioButton text="filter3"/>
+      <RadioButton text="filter3"/>
+      <NumberInput min={0} max={100} name="wtf" text="wtf"/>
+    </div>
   </div>
   <div class="tourney-list card">
     <CardTitle title="Listing"/>
@@ -43,11 +57,23 @@
   div.t-listing {
     display: flex;
     flex-direction: column;
+    gap: var(--pad-size);
   }
+
   div.t-listing > div.content-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pad-size);
+  }
+  div.t-listing > div.content-header > div.panel-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: var(--pad-size);
+  }
+  div.t-listing > div.content-header > div.filters {
+    display: flex;
+    flex-direction: row;
     gap: var(--pad-size);
   }
 
