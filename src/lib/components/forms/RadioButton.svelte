@@ -1,18 +1,18 @@
 <script lang="ts">
-  export let text: String;
-  export let check: Boolean = false;
+  export let text: string;
+  export let check: boolean = false;
 </script>
 
 <div class="custom-radio">
   {#if check}
     <label class="radio-container">
-      <input type="radio" checked="checked" name="radio">
-      <span class="checkmark"></span>
+      <input type="radio" checked={check} name="radio" />
+      <span class="checkmark" />
     </label>
-  {:else}  
+  {:else}
     <label class="radio-container">
-      <input type="radio" name="radio">
-      <span class="checkmark"></span>
+      <input type="radio" name="radio" />
+      <span class="checkmark" />
     </label>
   {/if}
   {text}

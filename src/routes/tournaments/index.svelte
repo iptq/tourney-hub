@@ -23,7 +23,11 @@
   <div class="content-header">
     <div class="panel-top">
       <div class="search-bar">
-        <img class="icon search-icon" src="/icons/search-solid.svg" alt="icon" />
+        <img
+          class="icon search-icon"
+          src="/icons/search-solid.svg"
+          alt="icon"
+        />
         <input type="text" placeholder="search" />
       </div>
       <a class="button" href="/tournaments/create">
@@ -32,23 +36,32 @@
       </a>
     </div>
     <div class="filters">
-      <CheckBox text="filter1"/>
-      <CheckBox text="filter2"/>
-      <CheckBox text="filter3"/>
-      <RadioButton text="filter3" check={true}/>
-      <RadioButton text="filter3"/>
-      <RadioButton text="filter3"/>
-      <NumberInput min={0} max={100} name="wtf" text="wtf"/>
+      <CheckBox text="filter1" />
+      <CheckBox text="filter2" />
+      <CheckBox text="filter3" />
+      <RadioButton text="filter3" check={true} />
+      <RadioButton text="filter3" />
+      <RadioButton text="filter3" />
+      <NumberInput min={0} max={100} name="wtf" text="wtf" />
     </div>
   </div>
   <div class="tourney-list card">
-    <CardTitle title="Listing"/>
+    <CardTitle title="Listing" />
     {#each tournaments as tournament}
-    <hr>
-    <div class="card-content tourney-card">
-      <a href="/tournaments/{tournament.id}">{tournament.name}</a> by 
-      <a href="/user/{tournament.admin.osu_id}">{tournament.admin.username}</a>
-    </div>
+      <hr />
+      <div class="tourney-card">
+        <img
+          src="https://i.redd.it/n7fud5vc85n71.jpg"
+          alt="tourney icon"
+          class="tourney-icon"
+        />
+        <div class="tourney-card-content">
+          <a href="/tournaments/{tournament.id}">{tournament.name}</a> by
+          <a href="/user/{tournament.admin.osu_id}"
+            >{tournament.admin.username}</a
+          >
+        </div>
+      </div>
     {/each}
   </div>
 </div>
@@ -74,7 +87,7 @@
   div.t-listing > div.content-header > div.filters {
     display: flex;
     flex-direction: row;
-    gap: var(--pad-size);
+    gap: calc(1.5 * var(--pad-size));
   }
 
   div.search-bar {
@@ -101,9 +114,25 @@
     outline: none;
   }
 
-
   div.tourney-list {
-    
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  div.tourney-card {
+    display: flex;
+    flex-direction: row;
+  }
+  div.tourney-card > img.tourney-icon {
+    height: 7rem;
+    width: 7rem;
+  }
+
+  div.tourney-card-content {
+    width: 100%;
+    padding: var(--pad-size);
+    background-color: var(--bg-color-2);
   }
 
   .search-icon {

@@ -4,8 +4,8 @@
 
 <div class="custom-checkbox">
   <label class="checkbox-container">
-    <input type="checkbox">
-    <span class="checkmark"></span>
+    <input type="checkbox" />
+    <span class="checkmark" />
   </label>
   {text}
 </div>

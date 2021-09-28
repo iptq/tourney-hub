@@ -14,8 +14,6 @@
 
 <script lang="ts">
   import CardTitle from "$lib/components/CardTitle.svelte";
-  import TourneyNav from "$lib/components/TourneyNav.svelte";
-  import BannerCard from "$lib/components/BannerCard.svelte";
   import type { Tournament } from "$lib/models/Tournament";
 
   export let tournament: Tournament;
@@ -23,25 +21,37 @@
   let frontUrl = "/tournaments/" + tournament.id;
 </script>
 
-<details>
+<!-- <details>
   <summary>Tournament JSON</summary>
   <pre>{JSON.stringify(tournament, null, 2)}</pre>
-</details>
+</details> -->
 
-<BannerCard
-  imageUrl={tournament.banner_image}
-  title={tournament.name}
-  subtext="Sample Subtext"
-  url={frontUrl}
-/>
-
-<TourneyNav
-  {frontUrl}
-  mappoolsUrl={frontUrl + "/mappools"}
-  playersUrl={frontUrl + "/players"}
-  highlight="Front"
-/>
-
+<div class="tournament-container">
+  <div class="tournament-header">
+    <div class="card banner" style="--bg-img: url({tournament.banner_image})">
+      <div class="layer">
+        <span class="badge">2v2</span>
+        <span class="badge">std</span>
+        <span class="badge">double elimination</span>
+      </div>
+    </div>
+    <h1>{tournament.name}</h1>
+    <div class="header-bottom">
+      <span>Hosted by <b>{tournament.admin.username}</b></span>
+      <a href={frontUrl} class="button">
+        <img class="icon" src="/icons/user-plus-solid.svg" alt="icon" />
+        sign up
+      </a>
+    </div>
+    <!-- <span>sample subtext with cool words and stuff</span> -->
+  </div>
+  <div class="tournament-body">
+    <div class="card">
+      <div class="card-content">osu!</div>
+    </div>
+  </div>
+</div>
+<br /><br />
 <div class="tourney-container">
   <div class="left-column">
     <div class="card links-card">
@@ -90,14 +100,49 @@
 </div>
 
 <style>
-  div.tourney-container {
+  div.tournament-header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: var(--pad-size);
   }
-  @media screen and (max-width: 600px) {
-    div.tourney-container {
-      flex-direction: column-reverse;
-    }
+  div.tournament-header > h1 {
+    margin: 0;
+  }
+  div.tournament-header > div.banner {
+    width: 100%;
+    height: 10rem;
+    background-image: var(--bg-img);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: unset;
+  }
+  div.tournament-header > div.banner > div.layer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    gap: var(--dense-pad-size);
+
+    height: 100%;
+    padding: var(--pad-size);
+    background-color: var(--bg-faded);
+  }
+  div.tournament-header > div.banner > div.layer > span.badge {
+    background-color: var(--accent-color);
+    color: var(--bg-color-1);
+    padding: 0.1rem var(--dense-pad-size);
+    border: 1px solid var(--bg-color-4);
+    border-radius: var(--border-radius);
+  }
+  div.tournament-header > div.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  div.tournament-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pad-size);
   }
 
   div.left-column {

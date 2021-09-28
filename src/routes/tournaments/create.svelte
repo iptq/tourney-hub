@@ -11,10 +11,7 @@
 
 <script lang="ts">
   import { goto } from "$app/navigation";
-  import Card from "$lib/components/Card.svelte";
   import CardTitle from "$lib/components/CardTitle.svelte";
-  import ShortTextInput from "$lib/components/forms/ShortTextInput.svelte";
-  import SubmitButton from "$lib/components/forms/SubmitButton.svelte";
 
   let spinning: boolean = false;
   let name: string;
@@ -38,28 +35,46 @@
 </svelte:head>
 
 <div class="container card">
-  <CardTitle title="Create Tournament" />
-
-  <div class="form-div">
-    <Card maxWidthRem={25}>
-      <form on:submit|preventDefault|stopPropagation={submit}>
-        <ShortTextInput
-          fieldName="Tournament Name"
+  <CardTitle title="Create New Tournament" />
+  <div class="card-content">
+    <form on:submit|preventDefault|stopPropagation={submit}>
+      <div class="centered">
+        <input
+          type="text"
           bind:value={name}
           required={true}
           disabled={spinning}
-          placeholder=""
+          placeholder={""}
         />
-        <br />
-        <SubmitButton disabled={spinning} />
-      </form>
-    </Card>
+        <input type="submit" disabled={spinning} class="button" />
+      </div>
+    </form>
   </div>
 </div>
 
 <style>
-  div.form-div {
-    max-width: 30rem;
+  div.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pad-size);
+    padding: var(--pad-size);
     margin: auto;
+    max-width: 25rem;
+    width: 100%;
+    border: 1px solid var(--bg-color-4);
+    border-radius: var(--border-radius);
+  }
+
+  input[type="text"] {
+    color: unset;
+    background: var(--bg-color-1);
+    border: 1px solid var(--bg-color-4);
+    border-radius: var(--border-radius);
+    padding: var(--dense-pad-size) var(--pad-size);
+    width: calc(100% - 2 * var(--pad-size));
+  }
+  input[type="text"]:focus {
+    outline: 2px solid var(--bg-color-4);
   }
 </style>

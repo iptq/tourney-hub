@@ -11,12 +11,12 @@
   --accent-color-darker: #d39f3f;
   --accent-color-even-darker: #b88c3b; */
 
-
   /* Dark scheme */
   --bg-color-1: #191a1d;
   --bg-color-2: #292a31;
   --bg-color-3: #33353f;
   --bg-color-4: #454850;
+  --bg-faded: #191a1da0;
   --main-font-color: #dedeeb;
   --alt-font-color: #dedeeb;
   --accent-color: #f5b642;
@@ -37,6 +37,7 @@
   --border-radius: 2px;
   --font-size: 14px;
   --faded-opacity: 0.5;
+  --faded-accent-opacity: 0.75;
 }
 
 html {
@@ -71,7 +72,8 @@ a:hover {
   text-decoration: underline;
 }
 
-a.button {
+a.button,
+input[type="submit"].button {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -83,9 +85,11 @@ a.button {
   border-radius: var(--border-radius);
   width: max-content;
 }
-a.button:hover {
-  background-color: var(--accent-color-even-darker);
+a.button:hover,
+input[type="submit"].button:hover {
+  opacity: var(--faded-accent-opacity);
   text-decoration: none;
+  cursor: pointer;
 }
 
 p {
@@ -116,7 +120,6 @@ hr {
 
   border: 1px solid var(--bg-color-4);
   border-radius: var(--border-radius);
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   /* gap: 0.5px; */

@@ -7,7 +7,7 @@
 </script>
 
 <div>
-  <input type="number" name={name} style="--width: {widthRem}">
+  <input type="number" {name} style="--width: {widthRem} min={min} max={max}" />
   {text}
 </div>
 
@@ -36,7 +36,7 @@
     -webkit-appearance: none;
     margin: 0;
   }
-  input[type=number] {
+  input[type="number"] {
     -moz-appearance: textfield;
   }
 </style>
