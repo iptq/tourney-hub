@@ -14,11 +14,33 @@
 
 <script lang="ts">
   import CardTitle from "$lib/components/CardTitle.svelte";
+  import CardNav from "$lib/components/CardNav.svelte";
   import type { Tournament } from "$lib/models/Tournament";
 
   export let tournament: Tournament;
 
   let frontUrl = "/tournaments/" + tournament.id;
+
+  let cardNavLinks = [{
+    name: "front",
+    url: frontUrl
+  }, {
+    name: "mappools",
+    url: frontUrl
+  }, {
+    name: "schedules",
+    url: frontUrl
+  }, {
+    name: "standings",
+    url: frontUrl
+  }, {
+    name: "players",
+    url: frontUrl
+  }, {
+    name: "staff",
+    url: frontUrl
+  }]
+  let cardNavHighlight = "front";
 </script>
 
 <!-- <details>
@@ -37,7 +59,9 @@
     </div>
     <h1>{tournament.name}</h1>
     <div class="header-bottom">
-      <span>Hosted by <b>{tournament.admin.username}</b></span>
+      <span>Hosted by <a class="hosted-by" href="/user/{tournament.admin.osu_id}">
+        {tournament.admin.username}
+      </a></span>
       <a href={frontUrl} class="button">
         <img class="icon" src="/icons/user-plus-solid.svg" alt="icon" />
         sign up
@@ -46,11 +70,26 @@
     <!-- <span>sample subtext with cool words and stuff</span> -->
   </div>
   <div class="tournament-body">
-    <div class="card">
-      <div class="card-content">osu!</div>
+    <div class="tournament-left-body">
+      <div class="card row-card">
+        <CardTitle title="Details" />
+        <div class="card-content">
+          osu!
+        </div>
+      </div>
+    </div>
+    <div class="tournament-right-body">
+      <div class="card">
+        <CardNav links={cardNavLinks} highlight={cardNavHighlight} />
+        <div class="card-content">
+
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
 <br /><br />
 <div class="tourney-container">
   <div class="left-column">
@@ -130,13 +169,28 @@
     background-color: var(--accent-color);
     color: var(--bg-color-1);
     padding: 0.1rem var(--dense-pad-size);
-    border: 1px solid var(--bg-color-4);
-    border-radius: var(--border-radius);
+    border-radius: 3px;
   }
   div.tournament-header > div.header-bottom {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+  }
+  div.tournament-header > div.header-bottom .hosted-by{
+    font-size: larger;
+    font-weight: bold;
+  }
+
+  div.tournament-body {
+    display: flex;
+    flex-direction: row;
+    gap: var(--pad-size);
+  }
+  div.tournament-left-body {
+    flex-grow: 1;
+  }
+  div.tournament-right-body {
+    flex-grow: 3;
   }
 
   div.tournament-container {
