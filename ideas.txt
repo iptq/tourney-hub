@@ -63,3 +63,14 @@ should be able to calculate total match time from mp links
 -------------------
 betting system for matches
 - you wouldn't actually win anything tho
+-------------------
+- adding a timezone column to the user table might also be necessary for scheduling + displaying match times 
+-------------------
+- might need a win condition column for mappools (eg. scorev2 + best of 11, accuracy + best of 9)
+- and also a "no. of bans" column associated with each mappools
+-------------------
+- if auto reffing becomes a thing, we might also need a special flag to identify the "tiebreaker" maps 
+-------------------
+- qualifier pools might also need their own distinction 
+because there could be any number of teams/players in a single lobby
+and maps either get played in mappool order or in some random sequence

@@ -44,9 +44,9 @@
           bind:value={name}
           required={true}
           disabled={spinning}
-          placeholder={""}
+          placeholder={"new tournament name"}
         />
-        <input type="submit" disabled={spinning} class="button" />
+        <input type="submit" disabled={spinning} class="button" value="Create"/>
       </div>
     </form>
   </div>

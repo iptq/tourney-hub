@@ -1,55 +1,48 @@
 <script>
-  let players = [{
+  let staffTeam = [{
     id: 3214844,
     name: "Feiri",
-    rank: 1,
-    elo: 9987
+    role: "Host"
   }, {
     id: 2,
     name: "peppy",
-    rank: 2,
-    elo: 9124
+    role: "pooler"
   }, {
     id: 873961,
     name: "Skystar",
-    rank: 69,
-    elo: 7215
+    role: "pooler, testplayer"
   }, {
     id: 3044645,
     name: "No Dap",
-    rank: 125,
-    elo: 1551
+    role: "streamer"
   }, {
     id: 3388082,
     name: "ThunderBird2678",
-    rank: 727,
-    elo: 67
+    role: "commentator"
   }];
 </script>
 
 <div class="card-content">
-  {#each {length: 10} as i}
-  {#each players as player}
-  <a href="/user/{player.id}">
-    <div class="player">
+  {#each staffTeam as staff}
+  <a href="/user/{staff.id}">
+    <div class="staff">
       <div class="left">
-        <img src="https://a.ppy.sh/{player.id}" alt="{player.id} pfp">
-        {player.name}
+        <img src="https://a.ppy.sh/{staff.id}" alt="{staff.id} pfp">
+        {staff.name}
       </div>
       <div class="right">
-        <span class="faded">{player.elo} ELO (#{player.rank})</span>
+        <span class="faded">{staff.role}</span>
       </div>
     </div>
   </a>
-  {/each}
   {/each}
 </div>
 
 <style>
   img {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--border-radius);
   }
 
   div.card-content {
@@ -72,7 +65,7 @@
     background-color: var(--bg-color-3);
   }
 
-  div.player {
+  div.staff {
     display: flex;
     flex-direction: row;
     gap: var(--pad-size);
@@ -83,7 +76,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: var(--dense-pad-size);
+    gap: var(--pad-size);
     flex: 1 0 auto;
   }
   div.right {

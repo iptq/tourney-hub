@@ -15,7 +15,7 @@
     <div>
       <a class="nav-link brand" href="/">
         <img class="logo" src={logo} alt="logo" />
-        <span>Tourney Hub</span>
+        <span>osutourney</span>
       </a>
       {#each links as link}
         <a class="nav-link nav-left" href={link.url}>
@@ -37,11 +37,22 @@
 
 <style>
   nav {
-    background-color: var(--bg-color-2);
+    /* background-color: var(--bg-color-2); */
     border-bottom: 1px solid var(--bg-color-4);
     margin-bottom: var(--pad-size);
+    background-image: linear-gradient(
+      45deg, 
+      var(--bg-color-2) 25%, 
+      var(--bg-color-3) 25%, 
+      var(--bg-color-3) 50%, 
+      var(--bg-color-2) 50%, 
+      var(--bg-color-2) 75%, 
+      var(--bg-color-3) 75%, 
+      var(--bg-color-3) 100%);
+    background-size: 33.94px 33.94px;
   }
   nav > div.container {
+    background-color: var(--bg-color-2);
     display: flex;
     justify-content: space-between;
     align-items: center;

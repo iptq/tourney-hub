@@ -175,7 +175,8 @@
   <!-- Everything below the head -->
   <div class="columns">
     <!-- small column of stats -->
-    <div class="card row-card player-stats">
+    <div class="row-card player-stats">
+      <CardTitle title="stats" />
       <div class="player-card-stat card-content">
         <span>Bancho Rank</span>
         {user.rank}
@@ -226,7 +227,6 @@
       <div class="card">
         <CardNav links={cardNavLinks} highlight={cardNavHighlight} />
         {#each matches as match}
-          <hr />
           <div class="card-content match-card {match.win}">
             <div class="match-header">
               <div>
